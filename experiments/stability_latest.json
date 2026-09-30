@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "repeats": 3,
+  "cache_bypassed": true,
+  "is_mock": true,
+  "stability": 1.0,
+  "signatures": [
+    [
+      "('uncertain', ('v::frame::F0000',))"
+    ],
+    [
+      "('uncertain', ('v::frame::F0000',))"
+    ],
+    [
+      "('uncertain', ('v::frame::F0000',))"
+    ]
+  ],
+  "note": "一致性衡量重复输出的稳定程度，不代表正确率；mock 输出仅验证机制"
+}

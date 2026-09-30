@@ -1,0 +1,226 @@
+{
+  "content_version": "2026-09-27",
+  "scope": "正文第1–10页；数据4页、工作流程6页；不含封面与结尾",
+  "sources": {
+    "data": "D:\\数据汇总\\driving_defect_agent\\docs\\当前数据概况与结构说明.md",
+    "workflow": "D:\\数据汇总\\driving_defect_agent\\docs\\当前Agent详细工作流程.md"
+  },
+  "slides": [
+    {
+      "slide_number": 1,
+      "chapter": "数据概况",
+      "title": "数据基础：10个上传视频的多模态示例输入",
+      "points": [
+        "10个数据包按上传视频组织，包含媒体、识别文本和平台材料。",
+        "6个横屏、4个竖屏，来源包含解说、截图、回放与重复慢放。",
+        "全部为demo_only，无随包缺陷或因果真值。"
+      ],
+      "metrics": [
+        {"value": "10", "unit": "个", "label": "上传视频数据包"},
+        {"value": "12分42秒", "unit": "", "label": "总时长（约）"},
+        {"value": "260", "unit": "个", "label": "预切视频片段"},
+        {"value": "1,417", "unit": "张", "label": "全画面采样图"},
+        {"value": "212", "unit": "条", "label": "默认ASR"},
+        {"value": "427", "unit": "条", "label": "公开评论样本"}
+      ],
+      "callout": "10个视频包不等于10起已确认、相互独立的事故。",
+      "visual_hint": "六项规模指标配两行内容；小型横竖屏数量标识。",
+      "notes": "来源：D:\\数据汇总\\driving_defect_agent\\docs\\当前数据概况与结构说明.md，§1（第11–15行）、§2规模表（第21–36行）、§2.2（第73–75行）。精确总时长为761.972秒；单视频30.700–112.480秒。另有仅v1提供的111张字幕裁剪图，图像合计1528张，但不能把裁剪图等同完整道路画面。目录v1–v10表示不同视频包，并非同一视频的版本迭代。数据无正式训练/验证/测试划分。视频标题所述车型、系统状态、原因与责任均保留为来源说法。"
+    },
+    {
+      "slide_number": 2,
+      "chapter": "数据概况",
+      "title": "数据包结构：来源、派生输入与溯源材料",
+      "points": [
+        "统一从agent_input.json定位媒体、文本和索引。",
+        "原始材料经切片、采样和识别，形成可检索的派生输入。",
+        "QA排除项、处理依据与人工复核任务单独保留。"
+      ],
+      "layers": [
+        {"label": "来源材料", "items": ["上传原视频", "提取音轨", "平台元数据与评论"]},
+        {"label": "派生输入", "items": ["短片段与采样帧", "ASR / OCR / spans", "跨模态索引"]},
+        {"label": "溯源与复核", "items": ["处理方法和参数", "排除原因与检查结果", "待人工复核事项"]}
+      ],
+      "ocr_chain": [
+        {"value": 15820, "label": "原始OCR检测"},
+        {"value": 7343, "label": "默认OCR点观察"},
+        {"value": 2075, "label": "合并OCR spans"}
+      ],
+      "callout": "三层OCR是同一批材料的处理结果，不可相加为独立证据。",
+      "visual_hint": "三层结构加横向OCR处理链；不要照搬文件目录树。",
+      "notes": "来源：D:\\数据汇总\\driving_defect_agent\\docs\\当前数据概况与结构说明.md，§2（第29–36行）、§3（第79–109行）、§4.4–4.5（第137–153行）、§9（第278–289行）。这是合并结构示意，各包可选文件不同。默认读取路径由manifest给出，不能把整个目录递归拼接为模型上下文，尤其不能将qa中排除项重新混入默认输入。OCR经过过滤和同时间同位置去重，span再合并重复文字并保留底层引用。结构图中的提取音轨来自上传视频；属于保存的来源媒体，不是新的独立事故证据。Agent生成的claims、observations、events、hypotheses与报告属于运行产物，不是输入真值。"
+    },
+    {
+      "slide_number": 3,
+      "chapter": "数据概况",
+      "title": "跨模态关联：时间定位内容，ID追溯来源",
+      "points": [
+        "片段、帧、ASR与OCR统一关联到上传视频的秒数。",
+        "span回指OCR点，OCR回指帧；跨片段引用保留原ID。",
+        "427条评论均无视频内时间，只作为视频级背景。"
+      ],
+      "diagram": {
+        "timed_streams": ["视频片段 [start,end)", "全画面帧 / 时间戳", "ASR / 时间区间", "OCR点观察 / 采样时刻"],
+        "trace_links": ["OCR span → 底层OCR ID → 帧ID → 图片", "片段索引 → ASR ID / OCR ID / 帧ID"],
+        "background_stream": "标题、简介、评论与回复链：视频级背景",
+        "time_label": "当前上传视频从0开始的秒数"
+      },
+      "callout": "上传视频时间、画面时钟和真实事件时间是不同概念。",
+      "visual_hint": "使用示意时间轴；如添加样本ID/时刻，明确标注“关联示意”。",
+      "notes": "来源：D:\\数据汇总\\driving_defect_agent\\docs\\当前数据概况与结构说明.md，§4.5（第149–153行）、§4.6（第155–163行）、§5（第165–188行）。片段区间使用[start,end)，局部时间需加片段start_sec换算到上传视频时间。跨片段ASR可被多个片段引用，但utterance_id不变，仍是一条语句。一个span可引用多个OCR点，一帧可含多条OCR，不能按行数累加独立佐证。span首末观测时刻不是精确字幕出现/消失时间。慢放和回放不会自动恢复真实事件时间。评论发帖时间不是视频内时间；评论采样非完整、非随机，不能概括总体意见分布。实际采样帧可能偏离目标半秒时刻，应使用记录实际时间戳。"
+    },
+    {
+      "slide_number": 4,
+      "chapter": "数据概况",
+      "title": "数据质量：结构可用，内容仍待人工复核",
+      "points": [
+        "10个包均可加载，记录计数与入口清单一致。",
+        "212条ASR、7343条默认OCR均未完成人工复核。",
+        "v3、v7无默认ASR但保留音轨；缺少人工真值。"
+      ],
+      "metrics": [
+        {"value": "10/10", "label": "结构加载通过"},
+        {"value": "0", "label": "error"},
+        {"value": "11", "label": "warning"},
+        {"value": "5", "label": "info"}
+      ],
+      "quality_rows": [
+        {"item": "11条父评论缺失", "impact": "回复上下文不完整"},
+        {"item": "2包默认ASR为空", "impact": "需要时转人工复听"},
+        {"item": "3个极短尾片段", "impact": "正常保留，不直接丢弃"},
+        {"item": "无缺陷/因果真值", "impact": "支持流程研究，准确率待标注评估"}
+      ],
+      "callout": "结构合格与内容真实是两个不同问题。",
+      "visual_hint": "上排四个检查指标；下排缺口—影响小表。",
+      "notes": "来源：D:\\数据汇总\\driving_defect_agent\\docs\\当前数据概况与结构说明.md，§8（第258–276行）、§9（第289行）。11条warning对应缺失直接父评论：v1 1条、v5 1条、v6 4条、v8 4条、v9 1条；5条info为2包默认ASR为空及3个极短尾片段。v1尾片段0.366秒、v6 0.099秒、v10约0.275秒。结构校验仅验证计数、ID、路径与时间等条件，没有重新完整解码全部媒体或逐文件复算SHA-256。所有ASR及默认OCR human_reviewed=false；名为人工复核清单的文件不代表已经完成复核。元数据model与software_version均为空；未采集弹幕、未下载评论图片。"
+    },
+    {
+      "slide_number": 5,
+      "chapter": "Agent工作流程",
+      "title": "总体架构：协调器串联五类模型判断",
+      "points": [
+        "Python协调器管理处理顺序、任务状态、预算与落盘。",
+        "五个角色负责局部语义判断，本地检索和规则负责支撑。",
+        "始终区分可观察现象、来源陈述和待验证归因。"
+      ],
+      "process_steps": [
+        {"label": "适配与校验", "type": "program"},
+        {"label": "文本提取", "type": "model", "output": "来源陈述"},
+        {"label": "独立视觉观察", "type": "model", "output": "画面观察"},
+        {"label": "合并候选事件", "type": "program"},
+        {"label": "RAG检索与对齐", "type": "model_program"},
+        {"label": "审查与有限补证", "type": "model_program"},
+        {"label": "候选归因", "type": "model"},
+        {"label": "规则分级与报告", "type": "program"}
+      ],
+      "support_layers": ["本地证据检索", "结构 / 引用 / 业务校验", "缓存 / 检查点 / 恢复"],
+      "callout": "五个角色不等于五个模型同时运行；主流程按阶段顺序执行。",
+      "visual_hint": "顺序流程图；可将文本与视觉画成相邻模块，但不可绘成同时运行的并行泳道。",
+      "notes": "来源：D:\\数据汇总\\driving_defect_agent\\docs\\当前Agent详细工作流程.md，§1（第9–23行）、§2（第25–52行）、§3（第54–64行）、§5.3（第248行）。当前新运行默认rag-v1；本页为当前默认流程，具体运行仍以run_manifest.json和config_snapshot.json为准。五角色为text_extract、visual_observe、align、review、attribution，可使用相同或不同的已配置模型。单视频先做文本提取，再进行视觉观察，但首轮视觉请求不接收标题、评论或文本角色结论。批量按视频依次处理，仅rag-v1逐条对齐有限并发。最终verification_status固定unverified，所有事件保留人工复核要求。"
+    },
+    {
+      "slide_number": 6,
+      "chapter": "Agent工作流程",
+      "title": "候选事件：由独立视觉观察汇聚形成",
+      "points": [
+        "文本提取“谁说了什么”，保留原始引用与可靠时间。",
+        "视觉只接收采样图、帧ID、时间戳和窗口范围。",
+        "同类观察相隔≤1秒且无剪辑疑点，才合并为事件。"
+      ],
+      "parameter_chips": [
+        {"value": "6秒", "label": "核心窗口"},
+        {"value": "前后各1秒", "label": "边缘上下文"},
+        {"value": "约1 Hz", "label": "首轮选样"},
+        {"value": "≤8张", "label": "每次视觉请求"}
+      ],
+      "entities": [
+        {"label": "Claim", "detail": "标题 / 简介 / ASR / OCR spans / 评论"},
+        {"label": "VisualObservation", "detail": "现象 / 引用帧 / 时间 / 可见性 / 局限"},
+        {"label": "Event", "detail": "程序合并视觉观察簇，初始边界为coarse"}
+      ],
+      "callout": "事件入口依赖视觉；文本陈述参与关联，不独立生成事件。",
+      "visual_hint": "突出Observation→Event实线，Claim→后续关联虚线；窗口与采样参数成小条。",
+      "notes": "来源：D:\\数据汇总\\driving_defect_agent\\docs\\当前Agent详细工作流程.md，§4.3（第97–109行）、§4.4（第111–125行）、§4.5–4.6（第127–146行）。首轮图像默认长边≤1280像素，JPEG质量85；不把字幕裁剪图作为道路画面。文本普通批次最多80条/8000字符目标阈值，评论最多30条/6000字符目标阈值，单条超长记录仍可能超过目标阈值。无可靠视频内时间的标题和评论保持视频级范围。相似复述阈值0.90仅生成possible_match提示。事件合并排除none_observed、保留uncertain；同类相邻簇3秒内可标记possibly_related但保持独立。初始边界coarse；观察覆盖窗口仍是稀疏帧理解，不是观看完整连续视频。"
+    },
+    {
+      "slide_number": 7,
+      "chapter": "Agent工作流程",
+      "title": "RAG对齐：先找候选，再判断证据关系",
+      "points": [
+        "有时间陈述：保留时间重叠或邻近2秒的事件。",
+        "无视频内时间：合并语义top-5与BM25 top-5候选。",
+        "每次精判一条完整陈述，默认最多并发2条。"
+      ],
+      "retrieval_routes": [
+        {"input": "有时间范围", "method": "时间重叠 / 邻近2秒", "output": "候选事件"},
+        {"input": "视频级陈述", "method": "语义top-5 ∪ BM25 top-5", "output": "候选事件并集"}
+      ],
+      "alignment_input": ["单条完整陈述", "候选事件摘要", "该陈述原始来源与可用父评论"],
+      "relation_labels": ["支持", "反对", "可能相关", "无关"],
+      "callout": "检索命中不等于支持；RAG减少候选与上下文，不保证同比减少请求。",
+      "visual_hint": "两路候选汇合到单条精判模块，再分流四类关系。",
+      "notes": "来源：D:\\数据汇总\\driving_defect_agent\\docs\\当前Agent详细工作流程.md，§4.7（第148–166行）。本地索引为work/evidence_index.sqlite，检索已导入证据，不增加联网搜索、不使用图像embedding。两种top-5取并集，去重后候选数可能大于5。向量不可用或异常时记录原因，视频级检索退回全候选；预算和鉴权异常按停止规则处理。对齐阶段接收候选事件摘要及陈述自身来源，不是每个事件的完整原始证据包。程序限制模型只能引用本次给定的陈述和候选事件ID。每条陈述有独立检查点与输入指纹。"
+    },
+    {
+      "slide_number": 8,
+      "chapter": "Agent工作流程",
+      "title": "审查与补证：围绕单个事件补齐证据",
+      "points": [
+        "完整事件证据包汇集观察、陈述、支持、反对和溯源。",
+        "审查寻找冲突、信息缺口与合理替代解释。",
+        "图像补证自动执行；音频、系统状态和来源身份转人工。"
+      ],
+      "evidence_pack_items": ["事件与完整观察", "关联陈述及局限", "支持与反对材料", "底层引用与来源上下文"],
+      "supplement_parameters": [
+        {"value": "1轮", "label": "每事件最多"},
+        {"value": "4 Hz", "label": "局部抽帧"},
+        {"value": "≤6秒", "label": "补证区间"},
+        {"value": "≤24张", "label": "总补充帧"}
+      ],
+      "callout": "补证后更新证据包；不自动重做全局合并与陈述对齐。",
+      "visual_hint": "证据包→审查→自动补帧/人工复核两条分流；自动分支回到更新后的证据包。",
+      "notes": "来源：D:\\数据汇总\\driving_defect_agent\\docs\\当前Agent详细工作流程.md，§4.8（第168–182行）、§4.9（第184–200行）。EvidencePack包括事件、完整观察、关联陈述、支持/反对材料、OCR底层溯源、补充候选及allowed_evidence_ids。父评论和补充候选仅为上下文，不自动计为支持。审查和归因角色读取文本化证据包，帧引用可追溯不代表重新看原图。必需上下文缺失或混入他视频材料时标记不完整并阻止正常调用。自动补证从已有片段抽取原分辨率帧，每请求≤8张。request_more_frames与request_original_resolution当前共用补帧路径。补证后不再反复审查，不重做全局合并或对齐；boundary_status=refined只表示发生补证，不自动改写事件时间边界。"
+    },
+    {
+      "slide_number": 9,
+      "chapter": "Agent工作流程",
+      "title": "候选归因：保留证据边界与验证要求",
+      "points": [
+        "每个事件最多3个候选解释；证据不足时允许弃答。",
+        "每个假设列出支持、反对、替代解释、缺失信息与反事实。",
+        "程序按现象、系统状态、归因三个维度分级。"
+      ],
+      "grading_rows": [
+        {"dimension": "现象证据", "basis": "有效观察、可见性、连续性与冲突", "levels": "高 / 中 / 低 / 不足"},
+        {"dimension": "系统状态证据", "basis": "画面线索或来源声称", "levels": "中 / 低 / 不足"},
+        {"dimension": "归因证据", "basis": "候选假设及有效支持引用", "levels": "中 / 低 / 不足"}
+      ],
+      "outcomes": ["待复核线索", "证据不足", "不支持", "不适用"],
+      "callout": "所有假设均为unverified；反事实是验证思路，尚未执行验证。",
+      "visual_hint": "候选解释卡片接三维分级表；强调待验证标签，避免使用确诊/根因确认图标。",
+      "notes": "来源：D:\\数据汇总\\driving_defect_agent\\docs\\当前Agent详细工作流程.md，§4.10（第202–208行）、§4.11（第210–224行）。允许解释包括道路环境、合理驾驶行为、驾驶员操作/系统使用状态、剪辑与信息缺失及待验证的系统能力问题。反事实结构包含改变条件、保持条件、预期差异、混淆因素、验证材料。系统状态与归因不自动授予high；系统参与状态主要reported_active或unknown，不自动授予observed_active。等级是工程标签，非真实性概率。最终判定枚举为suspected、insufficient_evidence、not_supported、not_applicable；suspected需要非uncertain现象、足够现象证据、系统参与线索和允许的冲突状态。完整性/业务校验未过则降为不足。每事件保留人工复核项，无confirmed_defect自动结论。"
+    },
+    {
+      "slide_number": 10,
+      "chapter": "Agent工作流程",
+      "title": "工程闭环：可校验、可恢复、可追溯",
+      "points": [
+        "输出依次通过JSON、结构、引用、时间与业务规则检查。",
+        "格式失败最多追加3轮修复；检查点与输入指纹支持恢复。",
+        "报告由已处理结构化结果生成，每个事件进入人工复核。"
+      ],
+      "control_steps": ["输出校验", "格式修复", "检查点与缓存", "恢复与状态核验"],
+      "output_items": [
+        {"label": "claims.jsonl", "meaning": "来源陈述"},
+        {"label": "observations.jsonl", "meaning": "画面观察"},
+        {"label": "events.jsonl", "meaning": "事件与判定"},
+        {"label": "hypotheses.jsonl", "meaning": "待验证归因"},
+        {"label": "report.md / review_queue.jsonl", "meaning": "报告与复核清单"}
+      ],
+      "reading_order": ["summary.md核对完成状态", "单视频报告与复核清单", "证据ID回查媒体和来源"],
+      "callout": "complete表示工程流程完成，不表示缺陷或归因已经证实。",
+      "visual_hint": "上层运行控制带，下层可追溯输出链；不要画Claim必然生成Event的因果箭头。",
+      "notes": "来源：D:\\数据汇总\\driving_defect_agent\\docs\\当前Agent详细工作流程.md，§4.11（第224行）、§5.1–5.3（第226–254行）、§7（第281–316行）、§9（第348–357行）。格式修复与网络重试分别计数，真实请求都纳入用量。恢复保留原manifest、配置快照和流水线版本，历史无版本按legacy恢复，不自动升级rag-v1。主要阶段和视频批量顺序执行；调用/token默认0表示不设这两项工程额度上限，仍有请求时限、重试和补证轮数限制。查看真实调用应用live_calls，calls还包含缓存与mock统计。部分完成也可能退出码0，应核对complete/partial/failed与失败任务列表。报告模板不在最终阶段重新调用模型扩写事实。输出文件均在runs/<run_id>/videos/<video_id>/下，均为派生分析结果，不能当成原始输入标签。"
+    }
+  ]
+}

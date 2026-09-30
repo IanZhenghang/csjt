@@ -1,0 +1,243 @@
+{
+  "schema_version": "rag-recall:1",
+  "run_dir": "D:\\数据汇总\\driving_defect_agent\\experiments\\rag_validation\\20260927-001110-484220-d51d94c3\\rag_serial\\runs\\offline-mock",
+  "conditions": {
+    "pipeline_version": "rag-v1",
+    "alignment_mode": "rag_serial",
+    "align_workers": 1,
+    "is_mock": true,
+    "cache_state": "cold",
+    "usage_accounting": "post-attempt-v1",
+    "models": {
+      "text": "offline-mock",
+      "vision": "offline-mock",
+      "embedding": "text-embedding-v3"
+    },
+    "llm_settings": {
+      "base_url": "https://offline.invalid/v1",
+      "reasoning_effort": "low",
+      "max_tokens": 8192,
+      "enable_thinking": true
+    }
+  },
+  "eligible_queries": 0,
+  "scored_queries": 0,
+  "excluded": [
+    {
+      "benchmark_id": "v2:bbc54c3cc68b69a7",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v2:d93f1e051da890b4",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v2:64c4d4e349550fea",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v2:9e95d5f5b845a5d5",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v2:7adb308235a1f15b",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v2:865edc7189ed09ef",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v2:e8e6119e32388d65",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v2:3c14c1a446745ad2",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v2:c4047d82910cbbcb",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v2:a61183f0a1e436d1",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v2:5c25629c6479f699",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v2:7c0f6c79b802b6b4",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v4:d9d73e25da91f5d0",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v4:b1f4732afb8ae590",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v4:7dc8d3963458a15f",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v4:27de0a6278e3f79a",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v4:f9c49dbf55164b10",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v4:95dec8079d7969d8",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v4:b8f8eb7c405721b3",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v4:d330473575dea0cd",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v4:caf4af314dcef6cc",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v4:cab11efc05cc958d",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v4:0dc41bf5165a4212",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v4:5dcec0b98a7c8514",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v7:1774c36e1bf275ef",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v7:8a8e4087c1baf9ae",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v7:6eff71b21fd3a7c0",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v7:ddb7347ef766ce3c",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v7:747a5a44f3403b70",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v7:03d1f99580a328d7",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v7:ddd58e2fb4311bde",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v7:4b97cc475f388336",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v7:770669581b6e8ba8",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v7:ad0e3eb8e2d3099c",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v7:8dac8b45218b472a",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v7:a5be30cdc5fee56a",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v10:b6e910fe3f5cbbc6",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v10:08227e58d1fe9960",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v10:448749c060f7f086",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v10:67240300c75a6743",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v10:71a61d119b181442",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v10:481161ecbaa2ec63",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v10:6b921580639dc2f3",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v10:202872e2017da732",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v10:47097131532d45ff",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v10:082a5278af0b799f",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v10:1f1f5e185b8f62e9",
+      "reason": "not_human_reviewed"
+    },
+    {
+      "benchmark_id": "v10:7ff8bbf47f6d3f12",
+      "reason": "not_human_reviewed"
+    }
+  ],
+  "items": [],
+  "metrics": {
+    "related": {
+      "expected": 0,
+      "retrieved": 0,
+      "positive_queries": 0,
+      "recall": null
+    },
+    "contradicting": {
+      "expected": 0,
+      "retrieved": 0,
+      "positive_queries": 0,
+      "recall": null
+    },
+    "system_state": {
+      "expected": 0,
+      "retrieved": 0,
+      "positive_queries": 0,
+      "recall": null
+    }
+  },
+  "live_human_labeled_recall_measured": false,
+  "semantic_effectiveness_proven": false,
+  "note": "仅计算人工完整标注的候选检索召回；未标注或运行不匹配项不作零分，不能据此证明未观察事件没有遗漏。 当前为 mock 或运行模式未知，分数仅验证评估流程，不验证真实语义效果。"
+}

@@ -1,0 +1,77 @@
+{
+  "scheme": "legacy",
+  "project_root": "D:\\数据汇总\\driving_defect_agent\\experiments\\rag_validation\\20260927-001110-484220-d51d94c3\\legacy",
+  "run_dir": "D:\\数据汇总\\driving_defect_agent\\experiments\\rag_validation\\20260927-001110-484220-d51d94c3\\legacy\\runs\\offline-mock",
+  "is_mock": true,
+  "cache_state": "cold",
+  "source_fingerprint": "430e7da266851981a065ef8eaa761de5bdd3c6ff11eb34eb7e05c6d23cf62cbf",
+  "max_context_characters": 24000,
+  "pipeline_exit_code": 0,
+  "execution_status": "finished",
+  "protocol_wall_seconds": 153.875,
+  "blocked_http_attempts": 0,
+  "source_unchanged": true,
+  "video_status_counts": {
+    "complete": 4
+  },
+  "videos": [
+    {
+      "video_id": "BV19e5S6PE8X",
+      "status": "complete",
+      "package_id": "v10",
+      "performance": {
+        "wall_seconds": 9.797,
+        "pipeline_version": "legacy",
+        "align_workers": 1,
+        "is_mock": true,
+        "status": "complete"
+      },
+      "alignment_metrics": {}
+    },
+    {
+      "video_id": "BV1VStJ6UEAD",
+      "status": "complete",
+      "package_id": "v7",
+      "performance": {
+        "wall_seconds": 6.156,
+        "pipeline_version": "legacy",
+        "align_workers": 1,
+        "is_mock": true,
+        "status": "complete"
+      },
+      "alignment_metrics": {}
+    },
+    {
+      "video_id": "BV1a5Le6REoQ",
+      "status": "complete",
+      "package_id": "v2",
+      "performance": {
+        "wall_seconds": 11.157,
+        "pipeline_version": "legacy",
+        "align_workers": 1,
+        "is_mock": true,
+        "status": "complete"
+      },
+      "alignment_metrics": {}
+    },
+    {
+      "video_id": "BV1bMNt6uETK",
+      "status": "complete",
+      "package_id": "v4",
+      "performance": {
+        "wall_seconds": 126.64,
+        "pipeline_version": "legacy",
+        "align_workers": 1,
+        "is_mock": true,
+        "status": "complete"
+      },
+      "alignment_metrics": {}
+    }
+  ],
+  "non_succeeded_tasks": [],
+  "errors": [],
+  "context_failures": [],
+  "missing_packages": [],
+  "actual_tokens": null,
+  "billed_cost": null
+}

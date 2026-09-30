@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>智能驾驶缺陷线索提取与归因 Agent — 工作流程图</title>
+<script src="mermaid.min.js"></script>
+<style>
+  body { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; background: #f7f8fa; margin: 0; padding: 24px 32px 48px; }
+  h1 { font-size: 22px; color: #1f2937; margin: 0 0 4px; }
+  p.sub { color: #6b7280; font-size: 13px; margin: 0 0 24px; }
+  h2 { font-size: 17px; color: #1f2937; margin: 32px 0 8px; border-left: 4px solid #2563eb; padding-left: 10px; }
+  .panel { background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 20px 16px; box-shadow: 0 1px 3px rgba(0,0,0,.05); }
+  .mermaid { display: flex; justify-content: center; }
+  .footnote { color: #9ca3af; font-size: 12px; margin-top: 10px; }
+</style>
+</head>
+<body>
+<h1>智能驾驶缺陷线索提取与归因 Agent — 工作流程图</h1>
+<p class="sub">依据 src/defect_agent/pipeline.py 与 STATUS.md / DECISIONS.md 绘制 · 2026-09-27</p>
+
+<h2>图一：单视频主流水线（process_video）</h2>
+<div class="panel">
+<pre class="mermaid">
+flowchart TD
+    A["输入：视频数据包<br/>标题 / 简介 / ASR / OCR spans / 评论 / 帧图"] --> B["适配器读取<br/>v1 schema 1.0.0 · v2 schema 1.0"]
+    B --> V{"数据校验<br/>引用 / 时间 / 路径 / 计数"}
+    V -->|"不通过"| X1["视频标记 failed<br/>错误写入 errors.jsonl"]
+    V -->|"通过"| N["normalize → normalized.json"]
+    N --> EV["证据库注册（确定性）<br/>全局 ID = video::kind::local_id<br/>OCR span 与底层记录同源分组"]
+    EV --> WD["窗口切分（确定性）<br/>6s 核心 + 1s 前后文 · 1Hz 采样 ≤8 图<br/>Pillow 缩放 → derived_media/"]
+    WD --> T1["文本提取 LLM<br/>背景 / 时间文本 / 评论三批次分开发送<br/>父评论仅作上下文"]
+    T1 --> T2["输出超长 → 按记录边界拆半重跑一次<br/>跨窗口去重"]
+    T2 --> O1[("claims.jsonl<br/>陈述 + 合法证据引用")]
+    WD --> T3["视觉观察 LLM<br/>按窗口发帧：帧 + ID + 时间戳<br/>区分道路 / 界面 / 画面文字"]
+    T3 --> O2[("observations.jsonl")]
+    O1 --> EM["同源复述检测（embedding）<br/>余弦 ≥0.90 → same_source 边<br/>只标记不删除 · 失败跳过不阻断"]
+    O2 --> MG["确定性合并事件簇<br/>同类现象 + 间隔 ≤1s + 无剪辑疑点<br/>剪辑疑点拆分并标记可能相关"]
+    MG --> PF["embedding 预筛<br/>视频级陈述只取 top-5 事件<br/>时间重叠候选始终保留 · 筛除对落盘可追溯"]
+    PF --> AL["LLM 对齐<br/>supports / contradicts / possible_match<br/>评论只做视频级候选关联"]
+    O1 --> AL
+    AL --> O3[("events.jsonl<br/>事件 + 陈述关联 + 对齐状态")]
+    O3 --> RV["审查 LLM<br/>找证据缺口：issues + 补证请求"]
+    RV --> RQ{"补证请求类型"}
+    RQ -->|"补帧 / 原图分辨率<br/>（自动可执行）"| RF["自动补证：ffmpeg 4Hz 原分辨率<br/>事件中心 ±3s 补帧 → 重新观察<br/>每事件最多一轮"]
+    RF -->|"新观察并入事件"| O2
+    RQ -->|"其余三类"| MAN["人工复核队列"]
+    RV -->|"issues"| MAN
+    O3 --> AT["归因 LLM<br/>每事件 ≤3 个候选假设 + 空假设路径<br/>支持 / 矛盾证据 · 反事实 · 缺失信息<br/>verification_status 固定 unverified"]
+    AT --> O4[("hypotheses.jsonl")]
+    O4 --> RU["规则分级 + 业务校验（确定性）<br/>三维度证据分级 · 归因不自动授予 high<br/>违规 → 降级 insufficient_evidence<br/>所有事件强制附加人工复核项"]
+    RU --> OUT["输出<br/>report.md · evidence_graph.json<br/>review_queue.jsonl · summary.md（批量）"]
+    EM -.->|"same_source 边"| OUT
+
+    classDef det fill:#dbeafe,stroke:#2563eb,color:#1e3a5f;
+    classDef llm fill:#fef3c7,stroke:#d97706,color:#5c3a00;
+    classDef emb fill:#ede9fe,stroke:#7c3aed,color:#3b1f66;
+    classDef data fill:#dcfce7,stroke:#16a34a,color:#14532d;
+    classDef gate fill:#fde68a,stroke:#b45309,color:#5c3a00;
+    classDef bad fill:#fee2e2,stroke:#dc2626,color:#5f0000;
+    classDef io fill:#e0f2fe,stroke:#0284c7,color:#0c4a6e;
+    class A,io1 io;
+    class B,N,EV,WD,MG,RU det;
+    class T1,T3,AL,RV,AT llm;
+    class EM,PF emb;
+    class O1,O2,O3,O4 data;
+    class V,RQ gate;
+    class X1 bad;
+    class OUT,MAN,RF io;
+</pre>
+<p class="footnote">颜色约定：<b>蓝</b>=确定性规则步骤（无 LLM）· <b>黄</b>=LLM 阶段 · <b>紫</b>=embedding 增强 · <b>绿</b>=数据产物 · <b>浅蓝</b>=输入/输出 · 红=失败分支。文本 / 视觉 / 审查 / 归因四阶段可经 pipeline 开关独立关闭（对照实验预设 A–D）。</p>
+</div>
+
+<h2>图二：运行编排与支撑设施（run / batch / resume）</h2>
+<div class="panel">
+<pre class="mermaid">
+flowchart TD
+    DOC["doctor 自检<br/>离线 / --live 五项能力探测"] --> OK{"能力可用？"}
+    OK -->|"是"| CMD
+    OK -->|"否"| STOP["按提示配置 .env<br/>（LLM_API_KEY / 端点）"]
+    CMD["命令入口<br/>run 单包 · batch 全量 · resume 续跑"] --> MODE{"运行模式"}
+    MODE -->|"mock（默认）"| MOCK["MockLLMClient<br/>确定性占位输出 · 不消耗预算"]
+    MODE -->|"live（显式指定）"| LIVE["OpenAI 兼容客户端<br/>阿里云百炼 qwen3.8-flash · SSE 流式<br/>LLM_ENABLE_THINKING 全局控思考"]
+    MOCK --> PIPE
+    LIVE --> PIPE["process_video 主流水线<br/>（见图一）"]
+    PIPE --- FRAME
+    subgraph FRAME["每个 LLM 任务的执行框架"]
+        ST["state.sqlite 任务状态机<br/>成功 → resume 零重复调用<br/>单任务失败不阻断其他任务"]
+        CACHE["响应缓存 cache.sqlite<br/>键含提示词哈希 + 模型<br/>换模型须开新运行"]
+        BUD["预算 / 节流 / 守卫<br/>预算尽 → paused_budget<br/>连续 3 个任务 429 → 自动暂停<br/>401 → 停止 · Ctrl+C → 存进度退出"]
+        FIX["失败自救<br/>重试 + Retry-After 退避<br/>一次 JSON 格式修复 · 截断标记"]
+    end
+    PIPE --- EMB["embedding 客户端<br/>官方百炼 text-embedding-v3<br/>live 启动探测失败 → 整轮禁用并明示<br/>mock 自动降级确定性哈希向量"]
+    PIPE --> OUT2["运行产物<br/>run_manifest.json · config_snapshot.json<br/>usage.jsonl / errors.jsonl · summary.md"]
+    EVAL["evaluate 对照标注<br/>stability 3 次独立采样<br/>crossvideo 跨视频聚类"] -.->|"对已有 run_id 分析"| OUT2
+
+    classDef det fill:#dbeafe,stroke:#2563eb,color:#1e3a5f;
+    classDef llm fill:#fef3c7,stroke:#d97706,color:#5c3a00;
+    classDef gate fill:#fde68a,stroke:#b45309,color:#5c3a00;
+    classDef bad fill:#fee2e2,stroke:#dc2626,color:#5f0000;
+    classDef io fill:#e0f2fe,stroke:#0284c7,color:#0c4a6e;
+    classDef infra fill:#f3f4f6,stroke:#6b7280,color:#1f2937;
+    class DOC,CMD det;
+    class MOCK,LIVE llm;
+    class OK,MODE gate;
+    class STOP bad;
+    class PIPE,OUT2,EVAL io;
+    class ST,CACHE,BUD,FIX,EMB infra;
+</pre>
+<p class="footnote">暂停均可恢复：预算暂停 / 限流暂停 / 手动中断后统一用 <code>resume --run-id &lt;运行ID&gt;</code> 续跑，已成功任务经状态机与缓存双重跳过，不重复计费。</p>
+</div>
+</body>
+</html>

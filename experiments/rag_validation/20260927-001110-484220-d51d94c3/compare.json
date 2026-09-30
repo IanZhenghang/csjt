@@ -1,0 +1,524 @@
+{
+  "schema_version": "rag-comparison:1",
+  "runs": [
+    {
+      "run_dir": "D:\\数据汇总\\driving_defect_agent\\experiments\\rag_validation\\20260927-001110-484220-d51d94c3\\legacy\\runs\\offline-mock",
+      "conditions": {
+        "pipeline_version": "legacy",
+        "alignment_mode": "legacy",
+        "align_workers": 1,
+        "is_mock": true,
+        "cache_state": "cold",
+        "usage_accounting": "post-attempt-v1",
+        "models": {
+          "text": "offline-mock",
+          "vision": "offline-mock",
+          "embedding": "text-embedding-v3"
+        },
+        "llm_settings": {
+          "base_url": "https://offline.invalid/v1",
+          "reasoning_effort": "low",
+          "max_tokens": 8192,
+          "enable_thinking": true
+        }
+      },
+      "usage": {
+        "logged_events": 1328,
+        "cached_events": 0,
+        "non_cached_logged_events": 1328,
+        "actual_posts": 0,
+        "reported_total_tokens": null,
+        "known_total_tokens": null,
+        "token_usage_complete": false,
+        "logged_429_events": 0,
+        "rate_limit_responses": 0,
+        "billed_cost": null
+      },
+      "usage_by_task": {
+        "align": {
+          "logged_events": 1170,
+          "cached_events": 0,
+          "non_cached_logged_events": 1170,
+          "actual_posts": 0,
+          "reported_total_tokens": null,
+          "known_total_tokens": null,
+          "token_usage_complete": false,
+          "logged_429_events": 0,
+          "rate_limit_responses": 0,
+          "billed_cost": null
+        },
+        "attribution": {
+          "logged_events": 4,
+          "cached_events": 0,
+          "non_cached_logged_events": 4,
+          "actual_posts": 0,
+          "reported_total_tokens": null,
+          "known_total_tokens": null,
+          "token_usage_complete": false,
+          "logged_429_events": 0,
+          "rate_limit_responses": 0,
+          "billed_cost": null
+        },
+        "review": {
+          "logged_events": 4,
+          "cached_events": 0,
+          "non_cached_logged_events": 4,
+          "actual_posts": 0,
+          "reported_total_tokens": null,
+          "known_total_tokens": null,
+          "token_usage_complete": false,
+          "logged_429_events": 0,
+          "rate_limit_responses": 0,
+          "billed_cost": null
+        },
+        "text_extract": {
+          "logged_events": 81,
+          "cached_events": 0,
+          "non_cached_logged_events": 81,
+          "actual_posts": 0,
+          "reported_total_tokens": null,
+          "known_total_tokens": null,
+          "token_usage_complete": false,
+          "logged_429_events": 0,
+          "rate_limit_responses": 0,
+          "billed_cost": null
+        },
+        "visual_observe": {
+          "logged_events": 69,
+          "cached_events": 0,
+          "non_cached_logged_events": 69,
+          "actual_posts": 0,
+          "reported_total_tokens": null,
+          "known_total_tokens": null,
+          "token_usage_complete": false,
+          "logged_429_events": 0,
+          "rate_limit_responses": 0,
+          "billed_cost": null
+        }
+      },
+      "embedding": null,
+      "videos": [
+        {
+          "video_id": "BV19e5S6PE8X",
+          "package_id": "v10",
+          "wall_seconds": 9.797,
+          "alignment_wall_seconds": null,
+          "performance_is_mock": true,
+          "alignment": {
+            "claims": null,
+            "completed_claims": null,
+            "resumed_claims": null,
+            "full_candidate_pairs": null,
+            "selected_candidate_pairs": null,
+            "full_prompt_characters": null,
+            "selected_prompt_characters": null,
+            "max_workers": null
+          }
+        },
+        {
+          "video_id": "BV1a5Le6REoQ",
+          "package_id": "v2",
+          "wall_seconds": 11.157,
+          "alignment_wall_seconds": null,
+          "performance_is_mock": true,
+          "alignment": {
+            "claims": null,
+            "completed_claims": null,
+            "resumed_claims": null,
+            "full_candidate_pairs": null,
+            "selected_candidate_pairs": null,
+            "full_prompt_characters": null,
+            "selected_prompt_characters": null,
+            "max_workers": null
+          }
+        },
+        {
+          "video_id": "BV1bMNt6uETK",
+          "package_id": "v4",
+          "wall_seconds": 126.64,
+          "alignment_wall_seconds": null,
+          "performance_is_mock": true,
+          "alignment": {
+            "claims": null,
+            "completed_claims": null,
+            "resumed_claims": null,
+            "full_candidate_pairs": null,
+            "selected_candidate_pairs": null,
+            "full_prompt_characters": null,
+            "selected_prompt_characters": null,
+            "max_workers": null
+          }
+        },
+        {
+          "video_id": "BV1VStJ6UEAD",
+          "package_id": "v7",
+          "wall_seconds": 6.156,
+          "alignment_wall_seconds": null,
+          "performance_is_mock": true,
+          "alignment": {
+            "claims": null,
+            "completed_claims": null,
+            "resumed_claims": null,
+            "full_candidate_pairs": null,
+            "selected_candidate_pairs": null,
+            "full_prompt_characters": null,
+            "selected_prompt_characters": null,
+            "max_workers": null
+          }
+        }
+      ],
+      "input_fingerprints": {
+        "BV19e5S6PE8X": "5fc602536dc84efadd9c1448c71c8531889d59a37dbd4a5d7ccc02d98de0110b",
+        "BV1a5Le6REoQ": "fc65c5a6b0a865cecb132b7f2cf7a23586fdbd606256805de7eea3d2c5a01e87",
+        "BV1bMNt6uETK": "bca177578ea687e57cd6d2a7049559746e97696e81d1b464e65bf4b2bb5d3230",
+        "BV1VStJ6UEAD": "b39d075e05fbfa49f703c5d6f5f08f0ddf20b75fbd8e607e82f041de5f7635fb"
+      },
+      "billed_cost": null,
+      "notes": [
+        "未提供供应商价格和账单，费用保留 null；reported tokens 不等于实际收费。",
+        "This isolated mock run measures no actual tokens, billed cost, live speed or semantic recall."
+      ]
+    },
+    {
+      "run_dir": "D:\\数据汇总\\driving_defect_agent\\experiments\\rag_validation\\20260927-001110-484220-d51d94c3\\rag_serial\\runs\\offline-mock",
+      "conditions": {
+        "pipeline_version": "rag-v1",
+        "alignment_mode": "rag_serial",
+        "align_workers": 1,
+        "is_mock": true,
+        "cache_state": "cold",
+        "usage_accounting": "post-attempt-v1",
+        "models": {
+          "text": "offline-mock",
+          "vision": "offline-mock",
+          "embedding": "text-embedding-v3"
+        },
+        "llm_settings": {
+          "base_url": "https://offline.invalid/v1",
+          "reasoning_effort": "low",
+          "max_tokens": 8192,
+          "enable_thinking": true
+        }
+      },
+      "usage": {
+        "logged_events": 1312,
+        "cached_events": 0,
+        "non_cached_logged_events": 1312,
+        "actual_posts": 0,
+        "reported_total_tokens": null,
+        "known_total_tokens": null,
+        "token_usage_complete": false,
+        "logged_429_events": 0,
+        "rate_limit_responses": 0,
+        "billed_cost": null
+      },
+      "usage_by_task": {
+        "align": {
+          "logged_events": 1162,
+          "cached_events": 0,
+          "non_cached_logged_events": 1162,
+          "actual_posts": 0,
+          "reported_total_tokens": null,
+          "known_total_tokens": null,
+          "token_usage_complete": false,
+          "logged_429_events": 0,
+          "rate_limit_responses": 0,
+          "billed_cost": null
+        },
+        "text_extract": {
+          "logged_events": 81,
+          "cached_events": 0,
+          "non_cached_logged_events": 81,
+          "actual_posts": 0,
+          "reported_total_tokens": null,
+          "known_total_tokens": null,
+          "token_usage_complete": false,
+          "logged_429_events": 0,
+          "rate_limit_responses": 0,
+          "billed_cost": null
+        },
+        "visual_observe": {
+          "logged_events": 69,
+          "cached_events": 0,
+          "non_cached_logged_events": 69,
+          "actual_posts": 0,
+          "reported_total_tokens": null,
+          "known_total_tokens": null,
+          "token_usage_complete": false,
+          "logged_429_events": 0,
+          "rate_limit_responses": 0,
+          "billed_cost": null
+        }
+      },
+      "embedding": null,
+      "videos": [
+        {
+          "video_id": "BV19e5S6PE8X",
+          "package_id": "v10",
+          "wall_seconds": 16.438,
+          "alignment_wall_seconds": 8.625,
+          "performance_is_mock": true,
+          "alignment": {
+            "claims": 243,
+            "completed_claims": 243,
+            "resumed_claims": 0,
+            "full_candidate_pairs": 243,
+            "selected_candidate_pairs": 243,
+            "full_prompt_characters": 1107271,
+            "selected_prompt_characters": 1107271,
+            "max_workers": 1
+          }
+        },
+        {
+          "video_id": "BV1a5Le6REoQ",
+          "package_id": "v2",
+          "wall_seconds": 16.219,
+          "alignment_wall_seconds": 9.469,
+          "performance_is_mock": true,
+          "alignment": {
+            "claims": 243,
+            "completed_claims": 243,
+            "resumed_claims": 0,
+            "full_candidate_pairs": 243,
+            "selected_candidate_pairs": 243,
+            "full_prompt_characters": 988188,
+            "selected_prompt_characters": 988188,
+            "max_workers": 1
+          }
+        },
+        {
+          "video_id": "BV1bMNt6uETK",
+          "package_id": "v4",
+          "wall_seconds": 23.718,
+          "alignment_wall_seconds": 16.906,
+          "performance_is_mock": true,
+          "alignment": {
+            "claims": 456,
+            "completed_claims": 448,
+            "resumed_claims": 0,
+            "full_candidate_pairs": 456,
+            "selected_candidate_pairs": 456,
+            "full_prompt_characters": 2029350,
+            "selected_prompt_characters": 2029350,
+            "max_workers": 1
+          }
+        },
+        {
+          "video_id": "BV1VStJ6UEAD",
+          "package_id": "v7",
+          "wall_seconds": 12.453,
+          "alignment_wall_seconds": 9.047,
+          "performance_is_mock": true,
+          "alignment": {
+            "claims": 228,
+            "completed_claims": 228,
+            "resumed_claims": 0,
+            "full_candidate_pairs": 228,
+            "selected_candidate_pairs": 228,
+            "full_prompt_characters": 927827,
+            "selected_prompt_characters": 927827,
+            "max_workers": 1
+          }
+        }
+      ],
+      "input_fingerprints": {
+        "BV19e5S6PE8X": "5fc602536dc84efadd9c1448c71c8531889d59a37dbd4a5d7ccc02d98de0110b",
+        "BV1a5Le6REoQ": "fc65c5a6b0a865cecb132b7f2cf7a23586fdbd606256805de7eea3d2c5a01e87",
+        "BV1bMNt6uETK": "bca177578ea687e57cd6d2a7049559746e97696e81d1b464e65bf4b2bb5d3230",
+        "BV1VStJ6UEAD": "b39d075e05fbfa49f703c5d6f5f08f0ddf20b75fbd8e607e82f041de5f7635fb"
+      },
+      "billed_cost": null,
+      "notes": [
+        "未提供供应商价格和账单，费用保留 null；reported tokens 不等于实际收费。",
+        "This isolated mock run measures no actual tokens, billed cost, live speed or semantic recall."
+      ]
+    },
+    {
+      "run_dir": "D:\\数据汇总\\driving_defect_agent\\experiments\\rag_validation\\20260927-001110-484220-d51d94c3\\rag_parallel\\runs\\offline-mock",
+      "conditions": {
+        "pipeline_version": "rag-v1",
+        "alignment_mode": "rag_parallel",
+        "align_workers": 2,
+        "is_mock": true,
+        "cache_state": "cold",
+        "usage_accounting": "post-attempt-v1",
+        "models": {
+          "text": "offline-mock",
+          "vision": "offline-mock",
+          "embedding": "text-embedding-v3"
+        },
+        "llm_settings": {
+          "base_url": "https://offline.invalid/v1",
+          "reasoning_effort": "low",
+          "max_tokens": 8192,
+          "enable_thinking": true
+        }
+      },
+      "usage": {
+        "logged_events": 1312,
+        "cached_events": 0,
+        "non_cached_logged_events": 1312,
+        "actual_posts": 0,
+        "reported_total_tokens": null,
+        "known_total_tokens": null,
+        "token_usage_complete": false,
+        "logged_429_events": 0,
+        "rate_limit_responses": 0,
+        "billed_cost": null
+      },
+      "usage_by_task": {
+        "align": {
+          "logged_events": 1162,
+          "cached_events": 0,
+          "non_cached_logged_events": 1162,
+          "actual_posts": 0,
+          "reported_total_tokens": null,
+          "known_total_tokens": null,
+          "token_usage_complete": false,
+          "logged_429_events": 0,
+          "rate_limit_responses": 0,
+          "billed_cost": null
+        },
+        "text_extract": {
+          "logged_events": 81,
+          "cached_events": 0,
+          "non_cached_logged_events": 81,
+          "actual_posts": 0,
+          "reported_total_tokens": null,
+          "known_total_tokens": null,
+          "token_usage_complete": false,
+          "logged_429_events": 0,
+          "rate_limit_responses": 0,
+          "billed_cost": null
+        },
+        "visual_observe": {
+          "logged_events": 69,
+          "cached_events": 0,
+          "non_cached_logged_events": 69,
+          "actual_posts": 0,
+          "reported_total_tokens": null,
+          "known_total_tokens": null,
+          "token_usage_complete": false,
+          "logged_429_events": 0,
+          "rate_limit_responses": 0,
+          "billed_cost": null
+        }
+      },
+      "embedding": null,
+      "videos": [
+        {
+          "video_id": "BV19e5S6PE8X",
+          "package_id": "v10",
+          "wall_seconds": 18.422,
+          "alignment_wall_seconds": 11.266,
+          "performance_is_mock": true,
+          "alignment": {
+            "claims": 243,
+            "completed_claims": 243,
+            "resumed_claims": 0,
+            "full_candidate_pairs": 243,
+            "selected_candidate_pairs": 243,
+            "full_prompt_characters": 1107271,
+            "selected_prompt_characters": 1107271,
+            "max_workers": 2
+          }
+        },
+        {
+          "video_id": "BV1a5Le6REoQ",
+          "package_id": "v2",
+          "wall_seconds": 14.704,
+          "alignment_wall_seconds": 7.891,
+          "performance_is_mock": true,
+          "alignment": {
+            "claims": 243,
+            "completed_claims": 243,
+            "resumed_claims": 0,
+            "full_candidate_pairs": 243,
+            "selected_candidate_pairs": 243,
+            "full_prompt_characters": 988188,
+            "selected_prompt_characters": 988188,
+            "max_workers": 2
+          }
+        },
+        {
+          "video_id": "BV1bMNt6uETK",
+          "package_id": "v4",
+          "wall_seconds": 26.406,
+          "alignment_wall_seconds": 19.218,
+          "performance_is_mock": true,
+          "alignment": {
+            "claims": 456,
+            "completed_claims": 448,
+            "resumed_claims": 0,
+            "full_candidate_pairs": 456,
+            "selected_candidate_pairs": 456,
+            "full_prompt_characters": 2029350,
+            "selected_prompt_characters": 2029350,
+            "max_workers": 2
+          }
+        },
+        {
+          "video_id": "BV1VStJ6UEAD",
+          "package_id": "v7",
+          "wall_seconds": 11.797,
+          "alignment_wall_seconds": 8.532,
+          "performance_is_mock": true,
+          "alignment": {
+            "claims": 228,
+            "completed_claims": 228,
+            "resumed_claims": 0,
+            "full_candidate_pairs": 228,
+            "selected_candidate_pairs": 228,
+            "full_prompt_characters": 927827,
+            "selected_prompt_characters": 927827,
+            "max_workers": 2
+          }
+        }
+      ],
+      "input_fingerprints": {
+        "BV19e5S6PE8X": "5fc602536dc84efadd9c1448c71c8531889d59a37dbd4a5d7ccc02d98de0110b",
+        "BV1a5Le6REoQ": "fc65c5a6b0a865cecb132b7f2cf7a23586fdbd606256805de7eea3d2c5a01e87",
+        "BV1bMNt6uETK": "bca177578ea687e57cd6d2a7049559746e97696e81d1b464e65bf4b2bb5d3230",
+        "BV1VStJ6UEAD": "b39d075e05fbfa49f703c5d6f5f08f0ddf20b75fbd8e607e82f041de5f7635fb"
+      },
+      "billed_cost": null,
+      "notes": [
+        "未提供供应商价格和账单，费用保留 null；reported tokens 不等于实际收费。",
+        "This isolated mock run measures no actual tokens, billed cost, live speed or semantic recall."
+      ]
+    }
+  ],
+  "wall_time_comparable": false,
+  "actual_post_counts_comparable": false,
+  "comparability_issues": [
+    "包含 mock 或模式未知运行；只能检查功能，不能据此比较真实 API 性能。"
+  ],
+  "semantic_quality_validated": false,
+  "note": "本表不推断召回质量或费用。旧日志缺少真实 POST 统计时，不与新每次请求日志直接计算调用降幅。",
+  "offline_video_outcomes": [
+    {
+      "scheme": "legacy",
+      "video_status_counts": {
+        "complete": 4
+      },
+      "missing_packages": [],
+      "context_failure_count": 0
+    },
+    {
+      "scheme": "rag_serial",
+      "video_status_counts": {
+        "partial": 4
+      },
+      "missing_packages": [],
+      "context_failure_count": 8
+    },
+    {
+      "scheme": "rag_parallel",
+      "video_status_counts": {
+        "partial": 4
+      },
+      "missing_packages": [],
+      "context_failure_count": 8
+    }
+  ]
+}

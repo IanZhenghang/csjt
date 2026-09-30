@@ -1,0 +1,88 @@
+# 项目参数默认值（密钥等敏感配置只在环境变量或 .env 中，不入库）
+schema_version: "1.0"
+
+window:
+  core_seconds: 6
+  context_before_seconds: 1
+  context_after_seconds: 1
+
+vision:
+  initial_sampling_hz: 1
+  max_images_per_request: 8
+  image_max_side: 1280
+  jpeg_quality: 85
+
+text:
+  max_records_per_batch: 80
+  max_characters_per_batch: 8000
+  # per_window：按计划书 §7.3 按窗口组织（默认，resume 兼容旧任务标签）；
+  # merged：全部窗口时间文本合并拆批，每视频约省 14 次调用（批量运行建议开启）
+  time_text_batching: per_window
+
+comments:
+  max_records_per_batch: 30
+  max_characters_per_batch: 6000
+
+refinement:
+  sampling_hz: 4
+  max_seconds_per_event: 6
+  max_images_total_per_event: 24
+  max_images_per_request: 8
+  max_rounds_per_event: 1
+
+budget:
+  # 调用与 token 工程上限（非供应商配额）。0 = 不限制（当前用户选择：全量挂机运行不设上限；
+  # 出现异常时 Ctrl+C 或 429 自动暂停都会保存进度，可 resume 续跑）。
+  max_live_calls_per_run: 0
+  max_total_tokens_per_run: 0
+  # 首次输出校验失败后的追加修复次数；0=禁用修复，必须为非负整数。
+  max_format_repairs_per_result: 3
+
+stability:
+  repeats: 3
+
+pipeline:
+  version: rag-v1
+  # 对照实验开关：text / vision / review 三个阶段可独立关闭
+  enable_text: true
+  enable_vision: true
+  enable_review: true
+  enable_attribution: true
+
+quality:
+  # 思考模式任务白名单：全局 LLM_ENABLE_THINKING=false 时仍对这些任务开启思考。
+  # 判定类任务（review 审查 / attribution 归因）开思考可提升质量，代价是每次调用
+  # 约 +20-60s（v2 的 24 事件约多 25 分钟）。留空 [] 保持全快速。
+  thinking_tasks: []
+
+align:
+  # 对齐提示词中每个事件的摘要长度（0=不截断，默认保持完整信息）。
+  # 截断只影响对齐阶段的匹配线索；审查与归因阶段始终读取完整画面观察。
+  event_summary_chars: 0
+  # 每次对齐请求包含的陈述条数。1=最细粒度（每条陈述单独请求，
+  # 单对判断召回最可靠；代价是调用次数 = 陈述数）。
+  # 建议与 use_embedding_prefilter 配合：预筛后每条陈述只判 top-5 事件。
+  claims_per_request: 1
+  # embedding 候选预筛（当前启用）：视频级陈述按语义相似只取 top-5 事件
+  # 送 LLM 精判（缩减候选对，不等于缩减请求数）；时间重叠候选始终保留；
+  # 被筛掉的候选对记录在 tasks/align_prefilter_log.json（可追溯）
+  use_embedding_prefilter: true
+
+embedding:
+  # embedding 增强模块（mock 模式自动降级为确定性 mock 向量；无密钥自动禁用）
+  enabled: true
+  # 模型名：.env 的 EMBEDDING_MODEL 优先（当前 text-embedding-v3，官方百炼）。
+  # 官方端点批量上限为 10 条/请求，batch_size 不得超过 10。
+  model: text-embedding-v3
+  batch_size: 10
+  # 同源复述检测：同视频内陈述余弦 ≥ 阈值 → 标记 same_source（只标记不删除）
+  same_source_threshold: 0.90
+  # 对齐预筛 top-k（use_embedding_prefilter 开启时生效）
+  prefilter_top_k: 5
+
+# rag-v1 固定逐条精判；只对 align 任务并发。旧运行按 manifest 的版本恢复。
+rag:
+  semantic_top_k: 5
+  lexical_top_k: 5
+  # 陈述对齐、审查与归因均不设程序字符上限。
+  align_max_workers: 2

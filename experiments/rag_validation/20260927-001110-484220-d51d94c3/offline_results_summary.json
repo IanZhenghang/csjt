@@ -1,0 +1,514 @@
+{
+  "mode": "mock",
+  "actual_tokens": null,
+  "billed_cost": null,
+  "schemes": [
+    {
+      "scheme": "legacy",
+      "video_status_counts": {
+        "complete": 4
+      },
+      "protocol_wall_seconds": 153.875,
+      "align_mock_model_calls": 1170,
+      "total_mock_model_calls": 1328,
+      "actual_http_posts": 0,
+      "alignment_wall_seconds": null,
+      "planned_full_prompt_characters": null,
+      "planned_selected_prompt_characters": null,
+      "submitted_alignment_context_characters": null,
+      "full_candidate_pairs": null,
+      "selected_candidate_pairs": null,
+      "context_failure_count_checked_in_both_languages": 0,
+      "context_failures_by_stage": {},
+      "context_failure_records": [],
+      "source_unchanged": true,
+      "videos": [
+        {
+          "video_id": "BV19e5S6PE8X",
+          "status": "complete",
+          "package_id": "v10",
+          "performance": {
+            "wall_seconds": 9.797,
+            "pipeline_version": "legacy",
+            "align_workers": 1,
+            "is_mock": true,
+            "status": "complete"
+          },
+          "alignment_metrics": {}
+        },
+        {
+          "video_id": "BV1VStJ6UEAD",
+          "status": "complete",
+          "package_id": "v7",
+          "performance": {
+            "wall_seconds": 6.156,
+            "pipeline_version": "legacy",
+            "align_workers": 1,
+            "is_mock": true,
+            "status": "complete"
+          },
+          "alignment_metrics": {}
+        },
+        {
+          "video_id": "BV1a5Le6REoQ",
+          "status": "complete",
+          "package_id": "v2",
+          "performance": {
+            "wall_seconds": 11.157,
+            "pipeline_version": "legacy",
+            "align_workers": 1,
+            "is_mock": true,
+            "status": "complete"
+          },
+          "alignment_metrics": {}
+        },
+        {
+          "video_id": "BV1bMNt6uETK",
+          "status": "complete",
+          "package_id": "v4",
+          "performance": {
+            "wall_seconds": 126.64,
+            "pipeline_version": "legacy",
+            "align_workers": 1,
+            "is_mock": true,
+            "status": "complete"
+          },
+          "alignment_metrics": {}
+        }
+      ]
+    },
+    {
+      "scheme": "rag_serial",
+      "video_status_counts": {
+        "partial": 4
+      },
+      "protocol_wall_seconds": 68.906,
+      "align_mock_model_calls": 1162,
+      "total_mock_model_calls": 1312,
+      "actual_http_posts": 0,
+      "alignment_wall_seconds": 44.047,
+      "planned_full_prompt_characters": 5052636,
+      "planned_selected_prompt_characters": 5052636,
+      "submitted_alignment_context_characters": 4840646,
+      "full_candidate_pairs": 1170,
+      "selected_candidate_pairs": 1170,
+      "context_failure_count_checked_in_both_languages": 16,
+      "context_failures_by_stage": {
+        "review": 4,
+        "attribution": 4,
+        "align_claim": 8
+      },
+      "context_failure_records": [
+        {
+          "ts": "2026-09-27T00:14:01.661965+00:00",
+          "task": "BV1a5Le6REoQ|review|E001",
+          "kind": "task_failed",
+          "message": "ValueError: 审查证据包不完整：必需证据包 472569 字符超过上限 24000，未截断"
+        },
+        {
+          "ts": "2026-09-27T00:14:01.720651+00:00",
+          "task": "BV1a5Le6REoQ|attribution|E001",
+          "kind": "task_failed",
+          "message": "ValueError: 归因证据包不完整：必需证据包 472600 字符超过上限 24000，未截断"
+        },
+        {
+          "ts": "2026-09-27T00:14:09.641928+00:00",
+          "task": "BV1bMNt6uETK|align_claim|C005",
+          "kind": "task_failed",
+          "message": "ValueError: required_alignment_context_exceeds_limit_or_missing: 必需证据包 26392 字符超过上限 24000，未截断"
+        },
+        {
+          "ts": "2026-09-27T00:14:09.656145+00:00",
+          "task": "BV1bMNt6uETK|align_claim|C006",
+          "kind": "task_failed",
+          "message": "ValueError: required_alignment_context_exceeds_limit_or_missing: 必需证据包 26392 字符超过上限 24000，未截断"
+        },
+        {
+          "ts": "2026-09-27T00:14:09.670361+00:00",
+          "task": "BV1bMNt6uETK|align_claim|C007",
+          "kind": "task_failed",
+          "message": "ValueError: required_alignment_context_exceeds_limit_or_missing: 必需证据包 26434 字符超过上限 24000，未截断"
+        },
+        {
+          "ts": "2026-09-27T00:14:09.715103+00:00",
+          "task": "BV1bMNt6uETK|align_claim|C008",
+          "kind": "task_failed",
+          "message": "ValueError: required_alignment_context_exceeds_limit_or_missing: 必需证据包 26434 字符超过上限 24000，未截断"
+        },
+        {
+          "ts": "2026-09-27T00:14:09.727844+00:00",
+          "task": "BV1bMNt6uETK|align_claim|C009",
+          "kind": "task_failed",
+          "message": "ValueError: required_alignment_context_exceeds_limit_or_missing: 必需证据包 26426 字符超过上限 24000，未截断"
+        },
+        {
+          "ts": "2026-09-27T00:14:09.741708+00:00",
+          "task": "BV1bMNt6uETK|align_claim|C010",
+          "kind": "task_failed",
+          "message": "ValueError: required_alignment_context_exceeds_limit_or_missing: 必需证据包 26404 字符超过上限 24000，未截断"
+        },
+        {
+          "ts": "2026-09-27T00:14:09.755862+00:00",
+          "task": "BV1bMNt6uETK|align_claim|C011",
+          "kind": "task_failed",
+          "message": "ValueError: required_alignment_context_exceeds_limit_or_missing: 必需证据包 26392 字符超过上限 24000，未截断"
+        },
+        {
+          "ts": "2026-09-27T00:14:09.813859+00:00",
+          "task": "BV1bMNt6uETK|align_claim|C013",
+          "kind": "task_failed",
+          "message": "ValueError: required_alignment_context_exceeds_limit_or_missing: 必需证据包 24348 字符超过上限 24000，未截断"
+        },
+        {
+          "ts": "2026-09-27T00:14:25.090705+00:00",
+          "task": "BV1bMNt6uETK|review|E001",
+          "kind": "task_failed",
+          "message": "ValueError: 审查证据包不完整：必需证据包 849409 字符超过上限 24000，未截断"
+        },
+        {
+          "ts": "2026-09-27T00:14:25.409931+00:00",
+          "task": "BV1bMNt6uETK|attribution|E001",
+          "kind": "task_failed",
+          "message": "ValueError: 归因证据包不完整：必需证据包 849440 字符超过上限 24000，未截断"
+        },
+        {
+          "ts": "2026-09-27T00:14:37.724541+00:00",
+          "task": "BV1VStJ6UEAD|review|E001",
+          "kind": "task_failed",
+          "message": "ValueError: 审查证据包不完整：必需证据包 494113 字符超过上限 24000，未截断"
+        },
+        {
+          "ts": "2026-09-27T00:14:37.869265+00:00",
+          "task": "BV1VStJ6UEAD|attribution|E001",
+          "kind": "task_failed",
+          "message": "ValueError: 归因证据包不完整：必需证据包 494144 字符超过上限 24000，未截断"
+        },
+        {
+          "ts": "2026-09-27T00:14:54.281035+00:00",
+          "task": "BV19e5S6PE8X|review|E001",
+          "kind": "task_failed",
+          "message": "ValueError: 审查证据包不完整：必需证据包 580283 字符超过上限 24000，未截断"
+        },
+        {
+          "ts": "2026-09-27T00:14:54.356015+00:00",
+          "task": "BV19e5S6PE8X|attribution|E001",
+          "kind": "task_failed",
+          "message": "ValueError: 归因证据包不完整：必需证据包 580314 字符超过上限 24000，未截断"
+        }
+      ],
+      "source_unchanged": true,
+      "videos": [
+        {
+          "video_id": "BV19e5S6PE8X",
+          "status": "partial",
+          "package_id": "v10",
+          "performance": {
+            "wall_seconds": 16.438,
+            "pipeline_version": "rag-v1",
+            "align_workers": 1,
+            "is_mock": true,
+            "status": "partial"
+          },
+          "alignment_metrics": {
+            "claims": 243,
+            "full_candidate_pairs": 243,
+            "selected_candidate_pairs": 243,
+            "full_prompt_characters": 1107271,
+            "selected_prompt_characters": 1107271,
+            "resumed_claims": 0,
+            "max_workers": 1,
+            "wall_seconds": 8.625,
+            "completed_claims": 243
+          }
+        },
+        {
+          "video_id": "BV1VStJ6UEAD",
+          "status": "partial",
+          "package_id": "v7",
+          "performance": {
+            "wall_seconds": 12.453,
+            "pipeline_version": "rag-v1",
+            "align_workers": 1,
+            "is_mock": true,
+            "status": "partial"
+          },
+          "alignment_metrics": {
+            "claims": 228,
+            "full_candidate_pairs": 228,
+            "selected_candidate_pairs": 228,
+            "full_prompt_characters": 927827,
+            "selected_prompt_characters": 927827,
+            "resumed_claims": 0,
+            "max_workers": 1,
+            "wall_seconds": 9.047,
+            "completed_claims": 228
+          }
+        },
+        {
+          "video_id": "BV1a5Le6REoQ",
+          "status": "partial",
+          "package_id": "v2",
+          "performance": {
+            "wall_seconds": 16.219,
+            "pipeline_version": "rag-v1",
+            "align_workers": 1,
+            "is_mock": true,
+            "status": "partial"
+          },
+          "alignment_metrics": {
+            "claims": 243,
+            "full_candidate_pairs": 243,
+            "selected_candidate_pairs": 243,
+            "full_prompt_characters": 988188,
+            "selected_prompt_characters": 988188,
+            "resumed_claims": 0,
+            "max_workers": 1,
+            "wall_seconds": 9.469,
+            "completed_claims": 243
+          }
+        },
+        {
+          "video_id": "BV1bMNt6uETK",
+          "status": "partial",
+          "package_id": "v4",
+          "performance": {
+            "wall_seconds": 23.718,
+            "pipeline_version": "rag-v1",
+            "align_workers": 1,
+            "is_mock": true,
+            "status": "partial"
+          },
+          "alignment_metrics": {
+            "claims": 456,
+            "full_candidate_pairs": 456,
+            "selected_candidate_pairs": 456,
+            "full_prompt_characters": 2029350,
+            "selected_prompt_characters": 2029350,
+            "resumed_claims": 0,
+            "max_workers": 1,
+            "wall_seconds": 16.906,
+            "completed_claims": 448
+          }
+        }
+      ]
+    },
+    {
+      "scheme": "rag_parallel",
+      "video_status_counts": {
+        "partial": 4
+      },
+      "protocol_wall_seconds": 71.531,
+      "align_mock_model_calls": 1162,
+      "total_mock_model_calls": 1312,
+      "actual_http_posts": 0,
+      "alignment_wall_seconds": 46.907,
+      "planned_full_prompt_characters": 5052636,
+      "planned_selected_prompt_characters": 5052636,
+      "submitted_alignment_context_characters": 4840646,
+      "full_candidate_pairs": 1170,
+      "selected_candidate_pairs": 1170,
+      "context_failure_count_checked_in_both_languages": 16,
+      "context_failures_by_stage": {
+        "review": 4,
+        "attribution": 4,
+        "align_claim": 8
+      },
+      "context_failure_records": [
+        {
+          "ts": "2026-09-27T00:15:09.556439+00:00",
+          "task": "BV1a5Le6REoQ|review|E001",
+          "kind": "task_failed",
+          "message": "ValueError: 审查证据包不完整：必需证据包 472569 字符超过上限 24000，未截断"
+        },
+        {
+          "ts": "2026-09-27T00:15:09.650099+00:00",
+          "task": "BV1a5Le6REoQ|attribution|E001",
+          "kind": "task_failed",
+          "message": "ValueError: 归因证据包不完整：必需证据包 472600 字符超过上限 24000，未截断"
+        },
+        {
+          "ts": "2026-09-27T00:15:17.734592+00:00",
+          "task": "BV1bMNt6uETK|align_claim|C005",
+          "kind": "task_failed",
+          "message": "ValueError: required_alignment_context_exceeds_limit_or_missing: 必需证据包 26392 字符超过上限 24000，未截断"
+        },
+        {
+          "ts": "2026-09-27T00:15:17.748379+00:00",
+          "task": "BV1bMNt6uETK|align_claim|C006",
+          "kind": "task_failed",
+          "message": "ValueError: required_alignment_context_exceeds_limit_or_missing: 必需证据包 26392 字符超过上限 24000，未截断"
+        },
+        {
+          "ts": "2026-09-27T00:15:17.801591+00:00",
+          "task": "BV1bMNt6uETK|align_claim|C007",
+          "kind": "task_failed",
+          "message": "ValueError: required_alignment_context_exceeds_limit_or_missing: 必需证据包 26434 字符超过上限 24000，未截断"
+        },
+        {
+          "ts": "2026-09-27T00:15:17.814897+00:00",
+          "task": "BV1bMNt6uETK|align_claim|C008",
+          "kind": "task_failed",
+          "message": "ValueError: required_alignment_context_exceeds_limit_or_missing: 必需证据包 26434 字符超过上限 24000，未截断"
+        },
+        {
+          "ts": "2026-09-27T00:15:17.829161+00:00",
+          "task": "BV1bMNt6uETK|align_claim|C009",
+          "kind": "task_failed",
+          "message": "ValueError: required_alignment_context_exceeds_limit_or_missing: 必需证据包 26426 字符超过上限 24000，未截断"
+        },
+        {
+          "ts": "2026-09-27T00:15:17.842604+00:00",
+          "task": "BV1bMNt6uETK|align_claim|C010",
+          "kind": "task_failed",
+          "message": "ValueError: required_alignment_context_exceeds_limit_or_missing: 必需证据包 26404 字符超过上限 24000，未截断"
+        },
+        {
+          "ts": "2026-09-27T00:15:17.857034+00:00",
+          "task": "BV1bMNt6uETK|align_claim|C011",
+          "kind": "task_failed",
+          "message": "ValueError: required_alignment_context_exceeds_limit_or_missing: 必需证据包 26392 字符超过上限 24000，未截断"
+        },
+        {
+          "ts": "2026-09-27T00:15:17.916636+00:00",
+          "task": "BV1bMNt6uETK|align_claim|C013",
+          "kind": "task_failed",
+          "message": "ValueError: required_alignment_context_exceeds_limit_or_missing: 必需证据包 24348 字符超过上限 24000，未截断"
+        },
+        {
+          "ts": "2026-09-27T00:15:35.543107+00:00",
+          "task": "BV1bMNt6uETK|review|E001",
+          "kind": "task_failed",
+          "message": "ValueError: 审查证据包不完整：必需证据包 849409 字符超过上限 24000，未截断"
+        },
+        {
+          "ts": "2026-09-27T00:15:35.671015+00:00",
+          "task": "BV1bMNt6uETK|attribution|E001",
+          "kind": "task_failed",
+          "message": "ValueError: 归因证据包不完整：必需证据包 849440 字符超过上限 24000，未截断"
+        },
+        {
+          "ts": "2026-09-27T00:15:47.942332+00:00",
+          "task": "BV1VStJ6UEAD|review|E001",
+          "kind": "task_failed",
+          "message": "ValueError: 审查证据包不完整：必需证据包 494113 字符超过上限 24000，未截断"
+        },
+        {
+          "ts": "2026-09-27T00:15:47.994537+00:00",
+          "task": "BV1VStJ6UEAD|attribution|E001",
+          "kind": "task_failed",
+          "message": "ValueError: 归因证据包不完整：必需证据包 494144 字符超过上限 24000，未截断"
+        },
+        {
+          "ts": "2026-09-27T00:16:06.231993+00:00",
+          "task": "BV19e5S6PE8X|review|E001",
+          "kind": "task_failed",
+          "message": "ValueError: 审查证据包不完整：必需证据包 580283 字符超过上限 24000，未截断"
+        },
+        {
+          "ts": "2026-09-27T00:16:06.365303+00:00",
+          "task": "BV19e5S6PE8X|attribution|E001",
+          "kind": "task_failed",
+          "message": "ValueError: 归因证据包不完整：必需证据包 580314 字符超过上限 24000，未截断"
+        }
+      ],
+      "source_unchanged": true,
+      "videos": [
+        {
+          "video_id": "BV19e5S6PE8X",
+          "status": "partial",
+          "package_id": "v10",
+          "performance": {
+            "wall_seconds": 18.422,
+            "pipeline_version": "rag-v1",
+            "align_workers": 2,
+            "is_mock": true,
+            "status": "partial"
+          },
+          "alignment_metrics": {
+            "claims": 243,
+            "full_candidate_pairs": 243,
+            "selected_candidate_pairs": 243,
+            "full_prompt_characters": 1107271,
+            "selected_prompt_characters": 1107271,
+            "resumed_claims": 0,
+            "max_workers": 2,
+            "wall_seconds": 11.266,
+            "completed_claims": 243
+          }
+        },
+        {
+          "video_id": "BV1VStJ6UEAD",
+          "status": "partial",
+          "package_id": "v7",
+          "performance": {
+            "wall_seconds": 11.797,
+            "pipeline_version": "rag-v1",
+            "align_workers": 2,
+            "is_mock": true,
+            "status": "partial"
+          },
+          "alignment_metrics": {
+            "claims": 228,
+            "full_candidate_pairs": 228,
+            "selected_candidate_pairs": 228,
+            "full_prompt_characters": 927827,
+            "selected_prompt_characters": 927827,
+            "resumed_claims": 0,
+            "max_workers": 2,
+            "wall_seconds": 8.532,
+            "completed_claims": 228
+          }
+        },
+        {
+          "video_id": "BV1a5Le6REoQ",
+          "status": "partial",
+          "package_id": "v2",
+          "performance": {
+            "wall_seconds": 14.704,
+            "pipeline_version": "rag-v1",
+            "align_workers": 2,
+            "is_mock": true,
+            "status": "partial"
+          },
+          "alignment_metrics": {
+            "claims": 243,
+            "full_candidate_pairs": 243,
+            "selected_candidate_pairs": 243,
+            "full_prompt_characters": 988188,
+            "selected_prompt_characters": 988188,
+            "resumed_claims": 0,
+            "max_workers": 2,
+            "wall_seconds": 7.891,
+            "completed_claims": 243
+          }
+        },
+        {
+          "video_id": "BV1bMNt6uETK",
+          "status": "partial",
+          "package_id": "v4",
+          "performance": {
+            "wall_seconds": 26.406,
+            "pipeline_version": "rag-v1",
+            "align_workers": 2,
+            "is_mock": true,
+            "status": "partial"
+          },
+          "alignment_metrics": {
+            "claims": 456,
+            "full_candidate_pairs": 456,
+            "selected_candidate_pairs": 456,
+            "full_prompt_characters": 2029350,
+            "selected_prompt_characters": 2029350,
+            "resumed_claims": 0,
+            "max_workers": 2,
+            "wall_seconds": 19.218,
+            "completed_claims": 448
+          }
+        }
+      ]
+    }
+  ],
+  "manual_benchmark_items": 48,
+  "human_scored_queries": 0,
+  "note": "Functional validation only. RAG partial outputs skip review/attribution and eight alignment jobs, so wall times and model-call counts do not establish efficiency improvements. All mock runs produce only one event per video, so the retrieval candidate reduction is not assessed."
+}

@@ -1,0 +1,14 @@
+import fs from 'node:fs/promises';
+import {FileBlob,PresentationFile} from '@oai/artifact-tool';
+const dir='D:/数据汇总/driving_defect_agent/reports/ppt/.build';
+const p=await PresentationFile.importPptx(await FileBlob.load('C:/Users/a1310/Downloads/城市交通研究院PPT模板.pptx'));
+console.log((await p.inspect({kind:'slide,layout,textbox,image',maxChars:14000})).ndjson);
+console.log('slidesProto',Object.getOwnPropertyNames(Object.getPrototypeOf(p.slides)));
+const s=p.slides.getItem(3);
+console.log('slideProto',Object.getOwnPropertyNames(Object.getPrototypeOf(s)));
+console.log('shapeProto',Object.getOwnPropertyNames(Object.getPrototypeOf(s.shapes)));
+console.log('ph',s.placeholders.items?.map(x=>({id:x.id,name:x.name,position:x.position})));
+await fs.writeFile(dir+'/template.proto.json',JSON.stringify(p.toProto()));
+const png=await p.export({slide:s,format:'png',scale:1});
+await fs.writeFile(dir+'/template-content.png',new Uint8Array(await png.arrayBuffer()));
+console.log('rendered');

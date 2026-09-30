@@ -1,0 +1,294 @@
+{"kind":"slide","id":"sl/okhs23","slide":1,"title":"数据规模与样本构成","textShapes":8}
+{"kind":"shape","id":"sh/hgb6x0v2","slide":1,"name":"标题 1","placeholder":"title","bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/gv254vuh","slide":1,"name":"内容占位符 2","bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/7q9orqd0","slide":1,"name":"页面标题","text":"数据规模与样本构成","textPreview":"数据规模与样本构成","textChars":9,"textLines":1,"bbox":[88,75.42,1104,102.08]}
+{"kind":"textbox","id":"sh/6p0nylcf","slide":1,"name":"页码","text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[1137,673,52,26]}
+{"kind":"textbox","id":"sh/tsb6t0vq","slide":1,"name":"10","text":"10","textPreview":"10","textChars":2,"textLines":1,"bbox":[88,192,190,99]}
+{"kind":"textbox","id":"sh/sri50vu5","slide":1,"name":"个上传视频","text":"个上传视频","textPreview":"个上传视频","textChars":5,"textLines":1,"bbox":[270,237,270,47]}
+{"kind":"textbox","id":"sh/jm9on6do","slide":1,"name":"12分42秒","text":"12分42秒","textPreview":"12分42秒","textChars":6,"textLines":1,"bbox":[88,322,440,76]}
+{"kind":"textbox","id":"sh/il0nulc3","slide":1,"name":"原视频总时长约 761.972 秒","text":"原视频总时长约 761.972 秒","textPreview":"原视频总时长约 761.972 秒","textChars":17,"textLines":1,"bbox":[88,402,430,38]}
+{"kind":"textbox","id":"sh/s729crq1","slide":1,"name":"6 个横屏包，4 个竖屏包 素材包含解说、截图、回放与慢放","text":"6 个横屏包，4 个竖屏包\n素材包含解说、截图、回放与慢放","textPreview":"6 个横屏包，4 个竖屏包 | 素材包含解说、截图、回放与慢放","textChars":29,"textLines":2,"bbox":[88,483,455,98]}
+{"kind":"textbox","id":"sh/6lkrah8b","slide":1,"name":"全部为 demo_only 示例输入；10 个视频包不等于 10 起已确认、相互独立的事故","text":"全部为 demo_only 示例输入；10 个视频包不等于 10 起已确认、相互独立的事故。","textPreview":"全部为 demo_only 示例输入；10 个视频包不等于 10 起已确认、相互独立的事故。","textChars":46,"textLines":1,"bbox":[88,620,1104,44]}
+{"kind":"table","id":"tb/yt4byxwr","slide":1,"name":"","rows":6,"cols":2,"preview":"输入材料 | 数量","bbox":[572,207,620,350]}
+{"kind":"notes","id":"nt/okhs23","slide":1,"text":"来源：D:\\数据汇总\\driving_defect_agent\\docs\\当前数据概况与结构说明.md，§1（第11–15行）、§2规模表（第21–36行）、§2.2（第73–75行）。精确总时长为761.972秒；单视频30.700–112.480秒。另有仅v1提供的111张字幕裁剪图，图像合计1528张，但不能把裁剪图等同完整道路画面。目录v1–v10表示不同视频包，并非同一视频的版本迭代。数据无正式训练/验证/测试划分。视频标题所述车型、系统状态、原因与责任均保留为来源说法。\n\n"}
+{"kind":"slide","id":"sl/9npwfg","slide":2,"title":"单个数据包的结构","textShapes":14}
+{"kind":"shape","id":"sh/qhszepk3","slide":2,"name":"标题 1","placeholder":"title","bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/ri1gnulo","slide":2,"name":"内容占位符 2","bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/07ahkz25","slide":2,"name":"页面标题","text":"单个数据包的结构","textPreview":"单个数据包的结构","textChars":8,"textLines":1,"bbox":[88,75.42,1104,102.08]}
+{"kind":"textbox","id":"sh/183yt43q","slide":2,"name":"页码","text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1137,673,52,26]}
+{"kind":"textbox","id":"sh/e5szi9kf","slide":2,"name":"统一入口：agent_input.json","text":"统一入口：agent_input.json","textPreview":"统一入口：agent_input.json","textChars":21,"textLines":1,"bbox":[88,188,1104,39]}
+{"kind":"textbox","id":"sh/z61grel0","slide":2,"name":"来源材料","text":"来源材料","textPreview":"来源材料","textChars":4,"textLines":1,"bbox":[88,245,318,64]}
+{"kind":"textbox","id":"sh/gbqx8f21","slide":2,"name":"派生输入","text":"派生输入","textPreview":"派生输入","textChars":4,"textLines":1,"bbox":[481,245,318,64]}
+{"kind":"textbox","id":"sh/hczyhk3m","slide":2,"name":"索引与溯源","text":"索引与溯源","textPreview":"索引与溯源","textChars":5,"textLines":1,"bbox":[874,245,318,64]}
+{"kind":"shape","id":"sh/hkf6tcje","slide":2,"bbox":[406,277,75,0]}
+{"kind":"shape","id":"sh/wj6pk7it","slide":2,"bbox":[799,277,75,0]}
+{"kind":"textbox","id":"sh/vixor218","slide":2,"name":"上传原视频与音轨 标题、简介与评论","text":"上传原视频与音轨\n标题、简介与评论","textPreview":"上传原视频与音轨 | 标题、简介与评论","textChars":17,"textLines":2,"bbox":[103,328,300,82]}
+{"kind":"textbox","id":"sh/uh4nix0n","slide":2,"name":"短片段与采样帧 ASR、OCR 和 spans","text":"短片段与采样帧\nASR、OCR 和 spans","textPreview":"短片段与采样帧 | ASR、OCR 和 spans","textChars":23,"textLines":2,"bbox":[496,328,300,82]}
+{"kind":"textbox","id":"sh/5of6xcja","slide":2,"name":"跨模态引用与校验清单 处理依据和待复核事项","text":"跨模态引用与校验清单\n处理依据和待复核事项","textPreview":"跨模态引用与校验清单 | 处理依据和待复核事项","textChars":21,"textLines":2,"bbox":[889,328,303,82]}
+{"kind":"shape","id":"sh/4n6po7i5","slide":2,"name":"分隔线","bbox":[88,435,1104,0]}
+{"kind":"textbox","id":"sh/jmxov21k","slide":2,"name":"OCR 的三个处理层","text":"OCR 的三个处理层","textPreview":"OCR 的三个处理层","textChars":10,"textLines":1,"bbox":[88,453,500,37]}
+{"kind":"textbox","id":"sh/ilo7mh0z","slide":2,"name":"15,820 原始检测","text":"15,820\n原始检测","textPreview":"15,820 | 原始检测","textChars":11,"textLines":2,"bbox":[88,507,300,86]}
+{"kind":"textbox","id":"sh/tsz61wjm","slide":2,"name":"7,343 默认点观察","text":"7,343\n默认点观察","textPreview":"7,343 | 默认点观察","textChars":11,"textLines":2,"bbox":[490,507,300,86]}
+{"kind":"textbox","id":"sh/srqpsri1","slide":2,"name":"2,075 合并 spans","text":"2,075\n合并 spans","textPreview":"2,075 | 合并 spans","textChars":14,"textLines":2,"bbox":[892,507,300,86]}
+{"kind":"shape","id":"sh/c7ihkzu9","slide":2,"bbox":[388,550,102,0]}
+{"kind":"shape","id":"sh/d8rid4bu","slide":2,"bbox":[790,550,102,0]}
+{"kind":"textbox","id":"sh/q5gzipcj","slide":2,"name":"三层 OCR 来自同一批材料，不可相加为独立证据数量。","text":"三层 OCR 来自同一批材料，不可相加为独立证据数量。","textPreview":"三层 OCR 来自同一批材料，不可相加为独立证据数量。","textChars":27,"textLines":1,"bbox":[88,620,1104,44]}
+{"kind":"notes","id":"nt/9npwfg","slide":2,"text":"来源：D:\\数据汇总\\driving_defect_agent\\docs\\当前数据概况与结构说明.md，§2（第29–36行）、§3（第79–109行）、§4.4–4.5（第137–153行）、§9（第278–289行）。这是合并结构示意，各包可选文件不同。默认读取路径由manifest给出，不能把整个目录递归拼接为模型上下文，尤其不能将qa中排除项重新混入默认输入。OCR经过过滤和同时间同位置去重，span再合并重复文字并保留底层引用。结构图中的提取音轨来自上传视频；属于保存的来源媒体，不是新的独立事故证据。Agent生成的claims、observations、events、hypotheses与报告属于运行产物，不是输入真值。\n\n"}
+{"kind":"slide","id":"sl/7l3h8j","slide":3,"title":"时间与跨模态关联","textShapes":24}
+{"kind":"shape","id":"sh/b69kny5o","slide":3,"name":"标题 1","placeholder":"title","bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/q5gjeto3","slide":3,"name":"内容占位符 2","bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/lwr2t8nq","slide":3,"name":"页面标题","text":"时间与跨模态关联","textPreview":"时间与跨模态关联","textChars":8,"textLines":1,"bbox":[88,75.42,1104,102.08]}
+{"kind":"textbox","id":"sh/0vi1k365","slide":3,"name":"页码","text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1137,673,52,26]}
+{"kind":"textbox","id":"sh/za9kry5k","slide":3,"name":"上传视频时间轴（关联示意）","text":"上传视频时间轴（关联示意）","textPreview":"上传视频时间轴（关联示意）","textChars":13,"textLines":1,"bbox":[88,190,690,42]}
+{"kind":"shape","id":"sh/y90jitoz","slide":3,"name":"分隔线","bbox":[255,260,630,0]}
+{"kind":"shape","id":"sh/107ih47m","slide":3,"name":"分隔线","bbox":[255,252,0,0]}
+{"kind":"textbox","id":"sh/gfy18z61","slide":3,"name":"0 秒","text":"0 秒","textPreview":"0 秒","textChars":3,"textLines":1,"bbox":[225,221,85,35]}
+{"kind":"shape","id":"sh/qd8ril8f","slide":3,"name":"分隔线","bbox":[465,252,0,0]}
+{"kind":"textbox","id":"sh/reh8rq90","slide":3,"name":"3 秒","text":"3 秒","textPreview":"3 秒","textChars":3,"textLines":1,"bbox":[435,221,85,35]}
+{"kind":"shape","id":"sh/sfq9kvql","slide":3,"name":"分隔线","bbox":[675,252,0,0]}
+{"kind":"textbox","id":"sh/dgzqt0r6","slide":3,"name":"6 秒","text":"6 秒","textPreview":"6 秒","textChars":3,"textLines":1,"bbox":[645,221,85,35]}
+{"kind":"shape","id":"sh/eh8rml8r","slide":3,"name":"分隔线","bbox":[885,252,0,0]}
+{"kind":"textbox","id":"sh/fih8vq9c","slide":3,"name":"9 秒","text":"9 秒","textPreview":"9 秒","textChars":3,"textLines":1,"bbox":[855,221,85,35]}
+{"kind":"textbox","id":"sh/0jq9ovqh","slide":3,"name":"视频片段","text":"视频片段","textPreview":"视频片段","textChars":4,"textLines":1,"bbox":[88,290,150,38]}
+{"kind":"textbox","id":"sh/1kzqx0r2","slide":3,"name":"[start, end)","text":"[start, end)","textPreview":"[start, end)","textChars":12,"textLines":1,"bbox":[255,284,405,47]}
+{"kind":"textbox","id":"sh/2lsrq58n","slide":3,"name":"下一片段","text":"下一片段","textPreview":"下一片段","textChars":4,"textLines":1,"bbox":[678,284,207,47]}
+{"kind":"textbox","id":"sh/n618za98","slide":3,"name":"采样帧","text":"采样帧","textPreview":"采样帧","textChars":3,"textLines":1,"bbox":[88,356,150,38]}
+{"kind":"textbox","id":"sh/za187a5g","slide":3,"name":"帧 1","text":"帧 1","textPreview":"帧 1","textChars":3,"textLines":1,"bbox":[255,350,85,45]}
+{"kind":"textbox","id":"sh/y9s7e5ov","slide":3,"name":"帧 2","text":"帧 2","textPreview":"帧 2","textChars":3,"textLines":1,"bbox":[465,350,85,45]}
+{"kind":"textbox","id":"sh/lc3q9knm","slide":3,"name":"帧 3","text":"帧 3","textPreview":"帧 3","textChars":3,"textLines":1,"bbox":[675,350,85,45]}
+{"kind":"textbox","id":"sh/kbapgf61","slide":3,"name":"帧 4","text":"帧 4","textPreview":"帧 4","textChars":3,"textLines":1,"bbox":[800,350,85,45]}
+{"kind":"textbox","id":"sh/bm183q54","slide":3,"name":"ASR","text":"ASR","textPreview":"ASR","textChars":3,"textLines":1,"bbox":[88,422,150,38]}
+{"kind":"textbox","id":"sh/als7a5oz","slide":3,"name":"同一句语音可跨片段引用","text":"同一句语音可跨片段引用","textPreview":"同一句语音可跨片段引用","textChars":11,"textLines":1,"bbox":[340,415,505,49]}
+{"kind":"textbox","id":"sh/x8jq50na","slide":3,"name":"OCR","text":"OCR","textPreview":"OCR","textChars":3,"textLines":1,"bbox":[88,489,150,38]}
+{"kind":"textbox","id":"sh/c7apcv6p","slide":3,"name":"span","text":"span","textPreview":"span","textChars":4,"textLines":1,"bbox":[255,481,135,52]}
+{"kind":"textbox","id":"sh/nihozq58","slide":3,"name":"底层 OCR ID","text":"底层 OCR ID","textPreview":"底层 OCR ID","textChars":9,"textLines":1,"bbox":[469,481,189,52]}
+{"kind":"textbox","id":"sh/2h876lon","slide":3,"name":"帧 ID","text":"帧 ID","textPreview":"帧 ID","textChars":4,"textLines":1,"bbox":[738,481,147,52]}
+{"kind":"shape","id":"sh/sn65grml","slide":3,"bbox":[390,507,79,0]}
+{"kind":"shape","id":"sh/dofm9w36","slide":3,"bbox":[658,507,80,0]}
+{"kind":"textbox","id":"sh/qloneh4f","slide":3,"name":"统一使用 上传视频秒数 保留原 ID 避免重复计数","text":"统一使用\n上传视频秒数\n保留原 ID\n避免重复计数","textPreview":"统一使用 | 上传视频秒数 | 保留原 ID | 避免重复计数","textChars":25,"textLines":4,"bbox":[951,277,241,169]}
+{"kind":"textbox","id":"sh/rmx47ml0","slide":3,"name":"427 条评论 均无视频内时间 仅作视频级背景","text":"427 条评论\n均无视频内时间\n仅作视频级背景","textPreview":"427 条评论 | 均无视频内时间 | 仅作视频级背景","textChars":23,"textLines":3,"bbox":[951,463,241,123]}
+{"kind":"textbox","id":"sh/0r65krmh","slide":3,"name":"上传视频时间、画面时钟和真实事件时间应分别理解。","text":"上传视频时间、画面时钟和真实事件时间应分别理解。","textPreview":"上传视频时间、画面时钟和真实事件时间应分别理解。","textChars":24,"textLines":1,"bbox":[88,620,1104,44]}
+{"kind":"notes","id":"nt/7l3h8j","slide":3,"text":"来源：D:\\数据汇总\\driving_defect_agent\\docs\\当前数据概况与结构说明.md，§4.5（第149–153行）、§4.6（第155–163行）、§5（第165–188行）。片段区间使用[start,end)，局部时间需加片段start_sec换算到上传视频时间。跨片段ASR可被多个片段引用，但utterance_id不变，仍是一条语句。一个span可引用多个OCR点，一帧可含多条OCR，不能按行数累加独立佐证。span首末观测时刻不是精确字幕出现/消失时间。慢放和回放不会自动恢复真实事件时间。评论发帖时间不是视频内时间；评论采样非完整、非随机，不能概括总体意见分布。实际采样帧可能偏离目标半秒时刻，应使用记录实际时间戳。\n\n图中 0、3、6、9 秒与帧序号是关联原理示意，不代表某条真实 ASR 或 OCR 的起止位置。"}
+{"kind":"slide","id":"sl/jdqvv7","slide":4,"title":"数据质量与使用边界","textShapes":11}
+{"kind":"shape","id":"sh/fqxsne50","slide":4,"name":"标题 1","placeholder":"title","bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/epobe94v","slide":4,"name":"内容占位符 2","bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/pwzutoni","slide":4,"name":"页面标题","text":"数据质量与使用边界","textPreview":"数据质量与使用边界","textChars":9,"textLines":1,"bbox":[88,75.42,1104,102.08]}
+{"kind":"textbox","id":"sh/ovqtkjmx","slide":4,"name":"页码","text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1137,673,52,26]}
+{"kind":"textbox","id":"sh/3uhcre5c","slide":4,"name":"10/10","text":"10/10","textPreview":"10/10","textChars":5,"textLines":1,"bbox":[88,189,235,72]}
+{"kind":"textbox","id":"sh/2t8bit4r","slide":4,"name":"数据包可加载","text":"数据包可加载","textPreview":"数据包可加载","textChars":6,"textLines":1,"bbox":[88,269,235,39]}
+{"kind":"textbox","id":"sh/50vah4ny","slide":4,"name":"0","text":"0","textPreview":"0","textChars":1,"textLines":1,"bbox":[374,189,235,72]}
+{"kind":"textbox","id":"sh/kzmt8zmd","slide":4,"name":"error","text":"error","textPreview":"error","textChars":5,"textLines":1,"bbox":[374,269,235,39]}
+{"kind":"textbox","id":"sh/e5gze14z","slide":4,"name":"11","text":"11","textPreview":"11","textChars":2,"textLines":1,"bbox":[660,189,235,72]}
+{"kind":"textbox","id":"sh/zqpgn6lk","slide":4,"name":"warning","text":"warning","textPreview":"warning","textChars":7,"textLines":1,"bbox":[660,269,235,39]}
+{"kind":"textbox","id":"sh/0ryhgbm5","slide":4,"name":"5","text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[946,189,235,72]}
+{"kind":"textbox","id":"sh/1s7ipg3q","slide":4,"name":"info","text":"info","textPreview":"info","textChars":4,"textLines":1,"bbox":[946,269,235,39]}
+{"kind":"textbox","id":"sh/nu90rqlg","slide":4,"name":"结构检查通过，仅说明计数、引用、路径与时间等条件满足要求。","text":"结构检查通过，仅说明计数、引用、路径与时间等条件满足要求。","textPreview":"结构检查通过，仅说明计数、引用、路径与时间等条件满足要求。","textChars":29,"textLines":1,"bbox":[88,620,1104,44]}
+{"kind":"table","id":"tb/p8jel0ba","slide":4,"name":"","rows":5,"cols":2,"preview":"当前状态 | 使用影响","bbox":[88,333,1104,253]}
+{"kind":"notes","id":"nt/jdqvv7","slide":4,"text":"来源：D:\\数据汇总\\driving_defect_agent\\docs\\当前数据概况与结构说明.md，§8（第258–276行）、§9（第289行）。11条warning对应缺失直接父评论：v1 1条、v5 1条、v6 4条、v8 4条、v9 1条；5条info为2包默认ASR为空及3个极短尾片段。v1尾片段0.366秒、v6 0.099秒、v10约0.275秒。结构校验仅验证计数、ID、路径与时间等条件，没有重新完整解码全部媒体或逐文件复算SHA-256。所有ASR及默认OCR human_reviewed=false；名为人工复核清单的文件不代表已经完成复核。元数据model与software_version均为空；未采集弹幕、未下载评论图片。\n\n"}
+{"kind":"slide","id":"sl/thdisj","slide":5,"title":"Agent 总体架构与五个角色","textShapes":12}
+{"kind":"shape","id":"sh/fm58zadw","slide":5,"name":"标题 1","placeholder":"title","bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/elwrq5wb","slide":5,"name":"内容占位符 2","bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/pc7a5kvy","slide":5,"name":"页面标题","text":"Agent 总体架构与五个角色","textPreview":"Agent 总体架构与五个角色","textChars":15,"textLines":1,"bbox":[88,75.42,1104,102.08]}
+{"kind":"textbox","id":"sh/ory9wfed","slide":5,"name":"页码","text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1137,673,52,26]}
+{"kind":"textbox","id":"sh/nqp83ads","slide":5,"name":"Python 协调器控制顺序、状态、预算与结果落盘","text":"Python 协调器控制顺序、状态、预算与结果落盘","textPreview":"Python 协调器控制顺序、状态、预算与结果落盘","textChars":25,"textLines":1,"bbox":[88,190,1104,40]}
+{"kind":"textbox","id":"sh/2pgru5w7","slide":5,"name":"适配与校验","text":"适配与校验","textPreview":"适配与校验","textChars":5,"textLines":1,"bbox":[88,259,246,88]}
+{"kind":"textbox","id":"sh/xgra94vu","slide":5,"name":"文本提取 来源陈述","text":"文本提取\n来源陈述","textPreview":"文本提取 | 来源陈述","textChars":9,"textLines":2,"bbox":[374,259,246,88]}
+{"kind":"textbox","id":"sh/cfy90ze9","slide":5,"name":"独立视觉观察 画面现象","text":"独立视觉观察\n画面现象","textPreview":"独立视觉观察 | 画面现象","textChars":11,"textLines":2,"bbox":[660,259,246,88]}
+{"kind":"textbox","id":"sh/ud0v2tsz","slide":5,"name":"生成候选事件","text":"生成候选事件","textPreview":"生成候选事件","textChars":6,"textLines":1,"bbox":[946,259,246,88]}
+{"kind":"shape","id":"sh/vy9cvy9k","slide":5,"bbox":[334,303,40,0]}
+{"kind":"shape","id":"sh/wzid43a5","slide":5,"bbox":[620,303,40,0]}
+{"kind":"shape","id":"sh/h0rux8rq","slide":5,"bbox":[906,303,40,0]}
+{"kind":"textbox","id":"sh/i10v6dsb","slide":5,"name":"规则分级与报告","text":"规则分级与报告","textPreview":"规则分级与报告","textChars":7,"textLines":1,"bbox":[88,409,246,88]}
+{"kind":"textbox","id":"sh/j29czi9w","slide":5,"name":"候选归因 待验证解释","text":"候选归因\n待验证解释","textPreview":"候选归因 | 待验证解释","textChars":10,"textLines":2,"bbox":[374,409,246,88]}
+{"kind":"textbox","id":"sh/43id83ah","slide":5,"name":"审查与有限补证 冲突和缺失","text":"审查与有限补证\n冲突和缺失","textPreview":"审查与有限补证 | 冲突和缺失","textChars":13,"textLines":2,"bbox":[660,409,246,88]}
+{"kind":"textbox","id":"sh/54bu18r2","slide":5,"name":"RAG 检索与对齐 证据关系","text":"RAG 检索与对齐\n证据关系","textPreview":"RAG 检索与对齐 | 证据关系","textChars":14,"textLines":2,"bbox":[946,409,246,88]}
+{"kind":"shape","id":"sh/y5gbu9s7","slide":5,"bbox":[1069,347,0,62]}
+{"kind":"shape","id":"sh/z6pcne9c","slide":5,"bbox":[906,453,40,0]}
+{"kind":"shape","id":"sh/3y10fql8","slide":5,"bbox":[620,453,40,0]}
+{"kind":"shape","id":"sh/2xsj6l4n","slide":5,"bbox":[334,453,40,0]}
+{"kind":"textbox","id":"sh/p03ihg3y","slide":5,"name":"蓝色节点为五个模型角色，可使用同一模型。 首轮视觉不接收文本结论；本地检索、规则校验和状态","text":"蓝色节点为五个模型角色，可使用同一模型。\n首轮视觉不接收文本结论；本地检索、规则校验和状态管理贯穿全程。","textPreview":"蓝色节点为五个模型角色，可使用同一模型。 | 首轮视觉不接收文本结论；本地检索、规则校验和状态管理贯穿全程。","textChars":52,"textLines":2,"bbox":[88,537,1104,76]}
+{"kind":"notes","id":"nt/thdisj","slide":5,"text":"来源：D:\\数据汇总\\driving_defect_agent\\docs\\当前Agent详细工作流程.md，§1（第9–23行）、§2（第25–52行）、§3（第54–64行）、§5.3（第248行）。当前新运行默认rag-v1；本页为当前默认流程，具体运行仍以run_manifest.json和config_snapshot.json为准。五角色为text_extract、visual_observe、align、review、attribution，可使用相同或不同的已配置模型。单视频先做文本提取，再进行视觉观察，但首轮视觉请求不接收标题、评论或文本角色结论。批量按视频依次处理，仅rag-v1逐条对齐有限并发。最终verification_status固定unverified，所有事件保留人工复核要求。\n\n"}
+{"kind":"slide","id":"sl/87ti1k","slide":6,"title":"文本提取与候选事件","textShapes":11}
+{"kind":"shape","id":"sh/vmho3qx0","slide":6,"name":"标题 1","placeholder":"title","bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/ul87ulwf","slide":6,"name":"内容占位符 2","bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/9kz61gfu","slide":6,"name":"页面标题","text":"文本提取与候选事件","textPreview":"文本提取与候选事件","textChars":9,"textLines":1,"bbox":[88,75.42,1104,102.08]}
+{"kind":"textbox","id":"sh/8jqpsve9","slide":6,"name":"页码","text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1137,673,52,26]}
+{"kind":"textbox","id":"sh/7yhozqxo","slide":6,"name":"先提取来源陈述","text":"先提取来源陈述","textPreview":"先提取来源陈述","textChars":7,"textLines":1,"bbox":[88,198,450,37]}
+{"kind":"textbox","id":"sh/mx87qlwj","slide":6,"name":"再进行独立视觉观察","text":"再进行独立视觉观察","textPreview":"再进行独立视觉观察","textChars":9,"textLines":1,"bbox":[660,198,532,37]}
+{"kind":"textbox","id":"sh/tg3qdkfe","slide":6,"name":"标题、简介、ASR、OCR spans、评论","text":"标题、简介、ASR、OCR spans、评论","textPreview":"标题、简介、ASR、OCR spans、评论","textChars":22,"textLines":1,"bbox":[88,255,494,70]}
+{"kind":"textbox","id":"sh/sfup4fet","slide":6,"name":"Claim 谁说了什么、引用与时间","text":"Claim\n谁说了什么、引用与时间","textPreview":"Claim | 谁说了什么、引用与时间","textChars":17,"textLines":2,"bbox":[88,343,494,104]}
+{"kind":"textbox","id":"sh/q1cvqh8b","slide":6,"name":"VisualObservation 可见现象、帧 ID 与局限","text":"VisualObservation\n可见现象、帧 ID 与局限","textPreview":"VisualObservation | 可见现象、帧 ID 与局限","textChars":31,"textLines":2,"bbox":[660,261,532,88]}
+{"kind":"textbox","id":"sh/r2lwzm9w","slide":6,"name":"程序合并观察簇","text":"程序合并观察簇","textPreview":"程序合并观察簇","textChars":7,"textLines":1,"bbox":[660,385,532,62]}
+{"kind":"shape","id":"sh/cnudsrqh","slide":6,"bbox":[926,349,0,36]}
+{"kind":"textbox","id":"sh/do3e1wr2","slide":6,"name":"候选 Event","text":"候选 Event","textPreview":"候选 Event","textChars":8,"textLines":1,"bbox":[660,484,532,58]}
+{"kind":"shape","id":"sh/2xsvmhsf","slide":6,"bbox":[926,447,0,37]}
+{"kind":"textbox","id":"sh/3y1wvm9k","slide":6,"name":"视觉请求仅接收图片、帧 ID、 时间戳与窗口范围。","text":"视觉请求仅接收图片、帧 ID、\n时间戳与窗口范围。","textPreview":"视觉请求仅接收图片、帧 ID、 | 时间戳与窗口范围。","textChars":25,"textLines":2,"bbox":[88,479,494,75]}
+{"kind":"textbox","id":"sh/4zadora5","slide":6,"name":"当前默认：6 秒核心窗口，前后各 1 秒；约 1 Hz，每请求最多 8 张图。","text":"当前默认：6 秒核心窗口，前后各 1 秒；约 1 Hz，每请求最多 8 张图。","textPreview":"当前默认：6 秒核心窗口，前后各 1 秒；约 1 Hz，每请求最多 8 张图。","textChars":39,"textLines":1,"bbox":[88,620,1104,44]}
+{"kind":"notes","id":"nt/87ti1k","slide":6,"text":"来源：D:\\数据汇总\\driving_defect_agent\\docs\\当前Agent详细工作流程.md，§4.3（第97–109行）、§4.4（第111–125行）、§4.5–4.6（第127–146行）。首轮图像默认长边≤1280像素，JPEG质量85；不把字幕裁剪图作为道路画面。文本普通批次最多80条/8000字符目标阈值，评论最多30条/6000字符目标阈值，单条超长记录仍可能超过目标阈值。无可靠视频内时间的标题和评论保持视频级范围。相似复述阈值0.90仅生成possible_match提示。事件合并排除none_observed、保留uncertain；同类相邻簇3秒内可标记possibly_related但保持独立。初始边界coarse；观察覆盖窗口仍是稀疏帧理解，不是观看完整连续视频。\n\n合并条件：同类现象、时间相隔不超过 1 秒，且没有剪辑或镜头切换疑点。图的左右分区表示两类证据，不表示并行运行。"}
+{"kind":"slide","id":"sl/jqk96h","slide":7,"title":"RAG 检索与证据对齐","textShapes":8}
+{"kind":"shape","id":"sh/83m58fa5","slide":7,"name":"标题 1","placeholder":"title","bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/94vm1krq","slide":7,"name":"内容占位符 2","bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/a54napsv","slide":7,"name":"页面标题","text":"RAG 检索与证据对齐","textPreview":"RAG 检索与证据对齐","textChars":11,"textLines":1,"bbox":[88,75.42,1104,102.08]}
+{"kind":"textbox","id":"sh/v6d43u9g","slide":7,"name":"页码","text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[1137,673,52,26]}
+{"kind":"textbox","id":"sh/w7m5cza1","slide":7,"name":"有时间的陈述","text":"有时间的陈述","textPreview":"有时间的陈述","textChars":6,"textLines":1,"bbox":[88,219,285,66]}
+{"kind":"textbox","id":"sh/x8v654rm","slide":7,"name":"无时间的陈述","text":"无时间的陈述","textPreview":"无时间的陈述","textChars":6,"textLines":1,"bbox":[88,352,285,66]}
+{"kind":"textbox","id":"sh/i9oneps7","slide":7,"name":"时间重叠 或邻近 2 秒","text":"时间重叠\n或邻近 2 秒","textPreview":"时间重叠 | 或邻近 2 秒","textChars":12,"textLines":2,"bbox":[437,210,300,85]}
+{"kind":"textbox","id":"sh/jaxo7u9s","slide":7,"name":"语义 top-5 与 BM25 top-5 的并集","text":"语义 top-5\n与 BM25 top-5 的并集","textPreview":"语义 top-5 | 与 BM25 top-5 的并集","textChars":25,"textLines":2,"bbox":[437,339,300,92]}
+{"kind":"shape","id":"sh/rmhw7m50","slide":7,"bbox":[373,252,64,0.5]}
+{"kind":"shape","id":"sh/ql8fyh4f","slide":7,"bbox":[373,385,64,0]}
+{"kind":"textbox","id":"sh/doze9wn6","slide":7,"name":"单条陈述 与候选事件对齐","text":"单条陈述\n与候选事件对齐","textPreview":"单条陈述 | 与候选事件对齐","textChars":12,"textLines":2,"bbox":[825,276,367,99]}
+{"kind":"shape","id":"sh/cnqx0rml","slide":7,"bbox":[737,252.5,88,73]}
+{"kind":"shape","id":"sh/3ixw3m5o","slide":7,"bbox":[737,325.5,88,59.5]}
+{"kind":"textbox","id":"sh/pkze5wnu","slide":7,"name":"在本地已导入证据中检索；当前最多 2 个对齐 worker，检索相似度不等于支持强度。","text":"在本地已导入证据中检索；当前最多 2 个对齐 worker，检索相似度不等于支持强度。","textPreview":"在本地已导入证据中检索；当前最多 2 个对齐 worker，检索相似度不等于支持强度。","textChars":43,"textLines":1,"bbox":[88,620,1104,44]}
+{"kind":"table","id":"tb/9gbmpkra","slide":7,"name":"","rows":3,"cols":2,"preview":"关系 | 判定用途","bbox":[88,475,1104,124]}
+{"kind":"notes","id":"nt/jqk96h","slide":7,"text":"来源：D:\\数据汇总\\driving_defect_agent\\docs\\当前Agent详细工作流程.md，§4.7（第148–166行）。本地索引为work/evidence_index.sqlite，检索已导入证据，不增加联网搜索、不使用图像embedding。两种top-5取并集，去重后候选数可能大于5。向量不可用或异常时记录原因，视频级检索退回全候选；预算和鉴权异常按停止规则处理。对齐阶段接收候选事件摘要及陈述自身来源，不是每个事件的完整原始证据包。程序限制模型只能引用本次给定的陈述和候选事件ID。每条陈述有独立检查点与输入指纹。\n\n"}
+{"kind":"slide","id":"sl/bsep95","slide":8,"title":"事件审查与有限补证","textShapes":12}
+{"kind":"shape","id":"sh/pk7yl4rq","slide":8,"name":"标题 1","placeholder":"title","bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/ojyhcja5","slide":8,"name":"内容占位符 2","bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/fepgfu9o","slide":8,"name":"页面标题","text":"事件审查与有限补证","textPreview":"事件审查与有限补证","textChars":9,"textLines":1,"bbox":[88,75.42,1104,102.08]}
+{"kind":"textbox","id":"sh/edgf6ps3","slide":8,"name":"页码","text":"08","textPreview":"08","textChars":2,"textLines":1,"bbox":[1137,673,52,26]}
+{"kind":"textbox","id":"sh/1g7yh4ru","slide":8,"name":"完整事件证据包","text":"完整事件证据包","textPreview":"完整事件证据包","textChars":7,"textLines":1,"bbox":[88,218,280,76]}
+{"kind":"textbox","id":"sh/gfyx8za9","slide":8,"name":"审查角色 冲突、缺失、替代解释","text":"审查角色\n冲突、缺失、替代解释","textPreview":"审查角色 | 冲突、缺失、替代解释","textChars":15,"textLines":2,"bbox":[435,208,369,97]}
+{"kind":"shape","id":"sh/za9gry9s","slide":8,"bbox":[368,256,67,0.5]}
+{"kind":"textbox","id":"sh/y90zits7","slide":8,"name":"归因用事件证据包 进入候选归因","text":"归因用事件证据包\n进入候选归因","textPreview":"归因用事件证据包 | 进入候选归因","textChars":15,"textLines":2,"bbox":[882,218,310,76]}
+{"kind":"shape","id":"sh/wzahgvel","slide":8,"bbox":[804,256,78,0.5]}
+{"kind":"textbox","id":"sh/x0jyp0f6","slide":8,"name":"无需补帧","text":"无需补帧","textPreview":"无需补帧","textChars":4,"textLines":1,"bbox":[807,181,121,30]}
+{"kind":"textbox","id":"sh/axszelwv","slide":8,"name":"自动补证：局部抽帧与重新观察","text":"自动补证：局部抽帧与重新观察","textPreview":"自动补证：局部抽帧与重新观察","textChars":14,"textLines":1,"bbox":[435,371,550,69]}
+{"kind":"shape","id":"sh/by1gnqxg","slide":8,"bbox":[619.5,305,90.5,66]}
+{"kind":"shape","id":"sh/ovqhcvep","slide":8,"bbox":[985,294,52,111.5]}
+{"kind":"textbox","id":"sh/9wjyl0fa","slide":8,"name":"每个事件最多 1 轮 4 Hz、最长 6 秒、最多 24 张图","text":"每个事件最多 1 轮\n4 Hz、最长 6 秒、最多 24 张图","textPreview":"每个事件最多 1 轮 | 4 Hz、最长 6 秒、最多 24 张图","textChars":31,"textLines":2,"bbox":[452,461,727,77]}
+{"kind":"textbox","id":"sh/mt8zalwj","slide":8,"name":"人工复核队列","text":"人工复核队列","textPreview":"人工复核队列","textChars":6,"textLines":1,"bbox":[88,371,280,69]}
+{"kind":"shape","id":"sh/nuhgjqx4","slide":8,"bbox":[228,305,391.5,66]}
+{"kind":"textbox","id":"sh/0rqh8bet","slide":8,"name":"需补帧","text":"需补帧","textPreview":"需补帧","textChars":3,"textLines":1,"bbox":[748,337,158,30]}
+{"kind":"textbox","id":"sh/1szyhgfy","slide":8,"name":"音频、系统状态、 来源身份等请求","text":"音频、系统状态、\n来源身份等请求","textPreview":"音频、系统状态、 | 来源身份等请求","textChars":16,"textLines":2,"bbox":[88,470,295,80]}
+{"kind":"textbox","id":"sh/horelc72","slide":8,"name":"补证不会重跑全局事件合并与对齐；补充观察仍须在最终摘要中正确归并。","text":"补证不会重跑全局事件合并与对齐；补充观察仍须在最终摘要中正确归并。","textPreview":"补证不会重跑全局事件合并与对齐；补充观察仍须在最终摘要中正确归并。","textChars":33,"textLines":1,"bbox":[88,620,1104,44]}
+{"kind":"notes","id":"nt/bsep95","slide":8,"text":"来源：D:\\数据汇总\\driving_defect_agent\\docs\\当前Agent详细工作流程.md，§4.8（第168–182行）、§4.9（第184–200行）。EvidencePack包括事件、完整观察、关联陈述、支持/反对材料、OCR底层溯源、补充候选及allowed_evidence_ids。父评论和补充候选仅为上下文，不自动计为支持。审查和归因角色读取文本化证据包，帧引用可追溯不代表重新看原图。必需上下文缺失或混入他视频材料时标记不完整并阻止正常调用。自动补证从已有片段抽取原分辨率帧，每请求≤8张。request_more_frames与request_original_resolution当前共用补帧路径。补证后不再反复审查，不重做全局合并或对齐；boundary_status=refined只表示发生补证，不自动改写事件时间边界。\n\n"}
+{"kind":"slide","id":"sl/pvqjda","slide":9,"title":"候选归因与证据分级","textShapes":8}
+{"kind":"shape","id":"sh/jetk7ip4","slide":9,"name":"标题 1","placeholder":"title","bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/idk3ydoj","slide":9,"name":"内容占位符 2","bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/hcb2587y","slide":9,"name":"页面标题","text":"候选归因与证据分级","textPreview":"候选归因与证据分级","textChars":9,"textLines":1,"bbox":[88,75.42,1104,102.08]}
+{"kind":"textbox","id":"sh/wb2lw36t","slide":9,"name":"页码","text":"09","textPreview":"09","textChars":2,"textLines":1,"bbox":[1137,673,52,26]}
+{"kind":"textbox","id":"sh/vatk3yp8","slide":9,"name":"每事件最多 3 个候选解释","text":"每事件最多 3 个候选解释","textPreview":"每事件最多 3 个候选解释","textChars":13,"textLines":1,"bbox":[88,194,670,37]}
+{"kind":"textbox","id":"sh/u9k3uton","slide":9,"name":"证据不足时可弃答","text":"证据不足时可弃答","textPreview":"证据不足时可弃答","textChars":8,"textLines":1,"bbox":[805,197,387,36]}
+{"kind":"textbox","id":"sh/8ni1s36h","slide":9,"name":"现象证据","text":"现象证据","textPreview":"现象证据","textChars":4,"textLines":1,"bbox":[88,510,310,66]}
+{"kind":"textbox","id":"sh/y5ormh87","slide":9,"name":"系统状态证据","text":"系统状态证据","textPreview":"系统状态证据","textChars":6,"textLines":1,"bbox":[485,510,310,66]}
+{"kind":"textbox","id":"sh/z6hsvmpc","slide":9,"name":"归因证据","text":"归因证据","textPreview":"归因证据","textChars":4,"textLines":1,"bbox":[882,510,310,66]}
+{"kind":"textbox","id":"sh/07q9orqx","slide":9,"name":"三个维度分别分级；所有假设均为 unverified，所有事件保留人工复核要求。","text":"三个维度分别分级；所有假设均为 unverified，所有事件保留人工复核要求。","textPreview":"三个维度分别分级；所有假设均为 unverified，所有事件保留人工复核要求。","textChars":40,"textLines":1,"bbox":[88,620,1104,44]}
+{"kind":"table","id":"tb/wvu5k3el","slide":9,"name":"","rows":4,"cols":2,"preview":"假设要素 | 需要保留的信息","bbox":[88,252,1104,213]}
+{"kind":"notes","id":"nt/pvqjda","slide":9,"text":"来源：D:\\数据汇总\\driving_defect_agent\\docs\\当前Agent详细工作流程.md，§4.10（第202–208行）、§4.11（第210–224行）。允许解释包括道路环境、合理驾驶行为、驾驶员操作/系统使用状态、剪辑与信息缺失及待验证的系统能力问题。反事实结构包含改变条件、保持条件、预期差异、混淆因素、验证材料。系统状态与归因不自动授予high；系统参与状态主要reported_active或unknown，不自动授予observed_active。等级是工程标签，非真实性概率。最终判定枚举为suspected、insufficient_evidence、not_supported、not_applicable；suspected需要非uncertain现象、足够现象证据、系统参与线索和允许的冲突状态。完整性/业务校验未过则降为不足。每事件保留人工复核项，无confirmed_defect自动结论。\n\n"}
+{"kind":"slide","id":"sl/1ej1ne","slide":10,"title":"运行控制与结果产物","textShapes":6}
+{"kind":"shape","id":"sh/jqxgre54","slide":10,"name":"标题 1","placeholder":"title","bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/ipozi9oj","slide":10,"name":"内容占位符 2","bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/twzyxon6","slide":10,"name":"页面标题","text":"运行控制与结果产物","textPreview":"运行控制与结果产物","textChars":9,"textLines":1,"bbox":[88,75.42,1104,102.08]}
+{"kind":"textbox","id":"sh/sv6hojml","slide":10,"name":"页码","text":"10","textPreview":"10","textChars":2,"textLines":1,"bbox":[1137,673,52,26]}
+{"kind":"textbox","id":"sh/7uxgvy50","slide":10,"name":"输出与引用校验","text":"输出与引用校验","textPreview":"输出与引用校验","textChars":7,"textLines":1,"bbox":[88,204,319,70]}
+{"kind":"textbox","id":"sh/6tozmt4f","slide":10,"name":"格式修复 失败后最多追加 3 轮","text":"格式修复\n失败后最多追加 3 轮","textPreview":"格式修复 | 失败后最多追加 3 轮","textChars":16,"textLines":2,"bbox":[481,196,319,86]}
+{"kind":"textbox","id":"sh/90vyl4n2","slide":10,"name":"缓存、检查点与恢复","text":"缓存、检查点与恢复","textPreview":"缓存、检查点与恢复","textChars":9,"textLines":1,"bbox":[874,204,318,70]}
+{"kind":"shape","id":"sh/8zmxcz6h","slide":10,"bbox":[407,239,74,0]}
+{"kind":"shape","id":"sh/y50zu1wr","slide":10,"bbox":[800,239,74,0]}
+{"kind":"textbox","id":"sh/07i1wbex","slide":10,"name":"complete 表示处理流程完成；内容正确性仍需结合证据和人工参考判断。","text":"complete 表示处理流程完成；内容正确性仍需结合证据和人工参考判断。","textPreview":"complete 表示处理流程完成；内容正确性仍需结合证据和人工参考判断。","textChars":37,"textLines":1,"bbox":[88,620,1104,44]}
+{"kind":"table","id":"tb/cbeh8vq9","slide":10,"name":"","rows":5,"cols":2,"preview":"产物 | 研究者可以查看什么","bbox":[88,329,1104,251]}
+{"kind":"notes","id":"nt/1ej1ne","slide":10,"text":"来源：D:\\数据汇总\\driving_defect_agent\\docs\\当前Agent详细工作流程.md，§4.11（第224行）、§5.1–5.3（第226–254行）、§7（第281–316行）、§9（第348–357行）。格式修复与网络重试分别计数，真实请求都纳入用量。恢复保留原manifest、配置快照和流水线版本，历史无版本按legacy恢复，不自动升级rag-v1。主要阶段和视频批量顺序执行；调用/token默认0表示不设这两项工程额度上限，仍有请求时限、重试和补证轮数限制。查看真实调用应用live_calls，calls还包含缓存与mock统计。部分完成也可能退出码0，应核对complete/partial/failed与失败任务列表。报告模板不在最终阶段重新调用模型扩写事实。输出文件均在runs/<run_id>/videos/<video_id>/下，均为派生分析结果，不能当成原始输入标签。\n\n"}
+{"kind":"slide","id":"sl/3038on","slide":11,"title":"评价设计与运行结果","textShapes":9}
+{"kind":"shape","id":"sh/yp0fa90v","slide":11,"name":"标题 1","placeholder":"title","bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/jq9gjehg","slide":11,"name":"内容占位符 2","bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/wnix8zi5","slide":11,"name":"页面标题","text":"评价设计与运行结果","textPreview":"评价设计与运行结果","textChars":9,"textLines":1,"bbox":[88,75.42,1104,102.08]}
+{"kind":"textbox","id":"sh/xoryh4zq","slide":11,"name":"页码","text":"11","textPreview":"11","textChars":2,"textLines":1,"bbox":[1137,673,52,26]}
+{"kind":"textbox","id":"sh/al0f6p0z","slide":11,"name":"10","text":"10","textPreview":"10","textChars":2,"textLines":1,"bbox":[88,188,156,94]}
+{"kind":"textbox","id":"sh/bm9gfuhk","slide":11,"name":"个视频","text":"个视频","textPreview":"个视频","textChars":3,"textLines":1,"bbox":[245,229,184,48]}
+{"kind":"textbox","id":"sh/ojix4fit","slide":11,"name":"35","text":"35","textPreview":"35","textChars":2,"textLines":1,"bbox":[535,188,166,94]}
+{"kind":"textbox","id":"sh/9krydkze","slide":11,"name":"条重点片段参考标注","text":"条重点片段参考标注","textPreview":"条重点片段参考标注","textChars":9,"textLines":1,"bbox":[703,227,489,55]}
+{"kind":"textbox","id":"sh/pszi54ja","slide":11,"name":"以最终事件为主进行语义对照， 时间相交仅用于定位候选。","text":"以最终事件为主进行语义对照，\n时间相交仅用于定位候选。","textPreview":"以最终事件为主进行语义对照， | 时间相交仅用于定位候选。","textChars":27,"textLines":2,"bbox":[88,315,478,93]}
+{"kind":"textbox","id":"sh/4rqhwzip","slide":11,"name":"单次 live 运行，全部处理完成。 文本与视觉模型均为 qwen3.8-flash。","text":"单次 live 运行，全部处理完成。\n文本与视觉模型均为 qwen3.8-flash。","textPreview":"单次 live 运行，全部处理完成。 | 文本与视觉模型均为 qwen3.8-flash。","textChars":43,"textLines":2,"bbox":[88,458,478,97]}
+{"kind":"textbox","id":"sh/258zupkj","slide":11,"name":"参考标注覆盖重点片段，尚未独立双人复核；不据此计算整体 Precision、Recall ","text":"参考标注覆盖重点片段，尚未独立双人复核；不据此计算整体 Precision、Recall 或 F1。","textPreview":"参考标注覆盖重点片段，尚未独立双人复核；不据此计算整体 Precision、Recall 或 F1。","textChars":50,"textLines":1,"bbox":[88,620,1104,44]}
+{"kind":"table","id":"tb/wna5onat","slide":11,"name":"","rows":5,"cols":2,"preview":"结构化产物 | 数量","bbox":[613,315,579,259]}
+{"kind":"notes","id":"nt/3038on","slide":11,"text":"来源：评价报告第2.1、2.2节。人工参考为《汇总.xlsx》Sheet1 第2–36行，共35条；10个视频通过超链接BV号唯一对应。\n\n比较以最终 events.jsonl 的摘要、类型和 uncertainties 为主；中间 observations/claims 仅作为解释性证据，尚未进入最终事件的发现不计最终覆盖。\n\n4个视频人工终点略超时长，区间比较裁剪至实际时长；10个零时长事件作为点事件处理。\n\n核心事实也包括某来源说了什么；例如v7诉求一致不意味着刹车失效得到确认。\n\n评级尚未经过独立双人复核。现有重点片段不支持整体Precision、Recall、F1或归因准确率。\n\n运行批次：20260927-113112-432900-live。评价日期2026-09-27。254条为细粒度记录，不等于254个独立缺陷；724条为未验证假设。"}
+{"kind":"slide","id":"sl/k84k0b","slide":12,"title":"参考条目一致性分布","textShapes":9}
+{"kind":"shape","id":"sh/p836d4f6","slide":12,"name":"标题 1","placeholder":"title","bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/47u54ze1","slide":12,"name":"内容占位符 2","bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/fi1o7ax4","slide":12,"name":"页面标题","text":"参考条目一致性分布","textPreview":"参考条目一致性分布","textChars":9,"textLines":1,"bbox":[88,75.42,1104,102.08]}
+{"kind":"textbox","id":"sh/uhsny5gj","slide":12,"name":"页码","text":"12","textPreview":"12","textChars":2,"textLines":1,"bbox":[1137,673,52,26]}
+{"kind":"textbox","id":"sh/gja50fyp","slide":12,"name":"40.0%","text":"40.0%","textPreview":"40.0%","textChars":5,"textLines":1,"bbox":[865,220,327,74]}
+{"kind":"textbox","id":"sh/ze5ojexo","slide":12,"name":"14 / 35 核心事实一致","text":"14 / 35 核心事实一致","textPreview":"14 / 35 核心事实一致","textChars":14,"textLines":1,"bbox":[865,300,327,41]}
+{"kind":"textbox","id":"sh/edw7a9w3","slide":12,"name":"45.7%","text":"45.7%","textPreview":"45.7%","textChars":5,"textLines":1,"bbox":[865,365,327,67]}
+{"kind":"textbox","id":"sh/8f2poj2h","slide":12,"name":"16 / 35 部分一致","text":"16 / 35 部分一致","textPreview":"16 / 35 部分一致","textChars":12,"textLines":1,"bbox":[865,438,327,41]}
+{"kind":"textbox","id":"sh/tgbqxojm","slide":12,"name":"合计 85.7%","text":"合计 85.7%","textPreview":"合计 85.7%","textChars":8,"textLines":1,"bbox":[865,516,327,56]}
+{"kind":"textbox","id":"sh/6dk7mtkb","slide":12,"name":"核心或部分一致","text":"核心或部分一致","textPreview":"核心或部分一致","textChars":7,"textLines":1,"bbox":[865,573,327,33]}
+{"kind":"textbox","id":"sh/7et8ve1w","slide":12,"name":"85.7% 是条目一致性分布中的合计比例，不是事件识别准确率。","text":"85.7% 是条目一致性分布中的合计比例，不是事件识别准确率。","textPreview":"85.7% 是条目一致性分布中的合计比例，不是事件识别准确率。","textChars":31,"textLines":1,"bbox":[88,620,1104,44]}
+{"kind":"chart","id":"ch/98natgj2","slide":12,"name":"","chartType":"bar","bbox":[88,210,700,380]}
+{"kind":"notes","id":"nt/k84k0b","slide":12,"text":"来源：评价报告第3.2、3.3节，35条分布为14/16/3/1/1。\n\n百分比独立四舍五入至1位小数，显示百分比总和为100.1%，图表以整数条数为基准。\n\n3条未覆盖分别为v1风险接近、v1疑似擦碰、v8发布者口播，不等于漏检3起独立事故。\n\n明确冲突集中在v8说明截图来源归类，并影响相邻条目部分一致判定；不能把这些条目直接相加为独立错误事件数。\n\n人工标注粒度不均，v1、v8、v9、v10细分较多；逐视频结果与条目结果应一并呈现。\n\n条目数合计35。14/35=40.0%，16/35=45.7%，3/35=8.6%，1/35=2.9%各两类。百分比一位小数舍入后合计100.1%，图以整数条数为主。"}
+{"kind":"slide","id":"sl/6s8akx","slide":13,"title":"逐视频效果比较","textShapes":4}
+{"kind":"shape","id":"sh/0badwjut","slide":13,"name":"标题 1","placeholder":"title","bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/1cjepove","slide":13,"name":"内容占位符 2","bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/ql8vq9cb","slide":13,"name":"页面标题","text":"逐视频效果比较","textPreview":"逐视频效果比较","textChars":7,"textLines":1,"bbox":[88,75.42,1104,102.08]}
+{"kind":"textbox","id":"sh/rmhwjedw","slide":13,"name":"页码","text":"13","textPreview":"13","textChars":2,"textLines":1,"bbox":[1137,673,52,26]}
+{"kind":"textbox","id":"sh/s7adsjuh","slide":13,"name":"每个视频单独判断，避免标注较细的视频主导整体印象","text":"每个视频单独判断，避免标注较细的视频主导整体印象","textPreview":"每个视频单独判断，避免标注较细的视频主导整体印象","textChars":24,"textLines":1,"bbox":[88,185,1104,40]}
+{"kind":"textbox","id":"sh/ih8vmpwf","slide":13,"name":"视频层面：2 个核心事实一致、7 个部分一致、1 个证据不足。其他含未覆盖、不足和冲突。","text":"视频层面：2 个核心事实一致、7 个部分一致、1 个证据不足。其他含未覆盖、不足和冲突。","textPreview":"视频层面：2 个核心事实一致、7 个部分一致、1 个证据不足。其他含未覆盖、不足和冲突。","textChars":44,"textLines":1,"bbox":[88,645,1104,33]}
+{"kind":"table","id":"tb/cvmxsfad","slide":13,"name":"","rows":11,"cols":4,"preview":"视频 | 整体判断 | 核心 / 部分 / 其他 | 主要结果与差异","bbox":[88,243,1104,347]}
+{"kind":"notes","id":"nt/6s8akx","slide":13,"text":"来源：评价报告第3.3节原表。BV号、人工标注行、五类计数和整体判定均按原文保留。\n\n视频层面：v5、v7核心事实一致；v1、v2、v3、v6、v8、v9、v10部分一致；v4证据不足。\n\n整体判断同时考虑主要过程和关键边界。一个事件可以对应多个人工参考阶段，条目数不是独立事件数。\n\n为保证投影可读性，正文将未覆盖、证据不足、明确冲突合为“其他”列，三类含义并未合并。原始五类计数：v1 4/1/2/0/0；v2 0/1/0/0/0；v3 0/1/0/0/0；v4 0/0/0/1/0；v5 1/0/0/0/0；v6 0/1/0/0/0；v7 1/0/0/0/0；v8 2/3/1/0/1；v9 4/3/0/0/0；v10 2/6/0/0/0。"}
+{"kind":"slide","id":"sl/w5mouy","slide":14,"title":"典型成效：事件阶段提取","textShapes":7}
+{"kind":"shape","id":"sh/fitsnmtk","slide":14,"name":"标题 1","placeholder":"title","bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/eh0buhcz","slide":14,"name":"内容占位符 2","bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/dgralcbu","slide":14,"name":"页面标题","text":"典型成效：事件阶段提取","textPreview":"典型成效：事件阶段提取","textChars":11,"textLines":1,"bbox":[88,75.42,1104,102.08]}
+{"kind":"textbox","id":"sh/sfits7u9","slide":14,"name":"页码","text":"14","textPreview":"14","textChars":2,"textLines":1,"bbox":[1137,673,52,26]}
+{"kind":"textbox","id":"sh/re9sjmto","slide":14,"name":"v1 退出停车与环视检查","text":"v1 退出停车与环视检查","textPreview":"v1 退出停车与环视检查","textChars":12,"textLines":1,"bbox":[88,190,532,37]}
+{"kind":"textbox","id":"sh/qt0bqhc3","slide":14,"name":"v5 接近、碰撞与静态后果","text":"v5 接近、碰撞与静态后果","textPreview":"v5 接近、碰撞与静态后果","textChars":13,"textLines":1,"bbox":[660,190,532,37]}
+{"kind":"textbox","id":"sh/y5cnylwb","slide":14,"name":"E027：91–93 秒，静止及退出文字 E028：94–102 秒，操作环视并检查","text":"E027：91–93 秒，静止及退出文字\nE028：94–102 秒，操作环视并检查","textPreview":"E027：91–93 秒，静止及退出文字 | E028：94–102 秒，操作环视并检查","textChars":42,"textLines":2,"bbox":[88,487,532,91]}
+{"kind":"textbox","id":"sh/j6l47qxg","slide":14,"name":"E011：21–22.5 秒，接近 E012 / E013：碰撞线索及事后后果","text":"E011：21–22.5 秒，接近\nE012 / E013：碰撞线索及事后后果","textPreview":"E011：21–22.5 秒，接近 | E012 / E013：碰撞线索及事后后果","textChars":39,"textLines":2,"bbox":[660,487,532,91]}
+{"kind":"textbox","id":"sh/k7u50ve1","slide":14,"name":"阶段表达便于回查证据；实际辅助驾驶状态与精确接触时刻仍保留限制。","text":"阶段表达便于回查证据；实际辅助驾驶状态与精确接触时刻仍保留限制。","textPreview":"阶段表达便于回查证据；实际辅助驾驶状态与精确接触时刻仍保留限制。","textChars":32,"textLines":1,"bbox":[88,620,1104,44]}
+{"kind":"image","id":"im/c3ap0z29","slide":14,"name":"","alt":"v1原始帧，上传视频91秒","bbox":[88,239,532,222]}
+{"kind":"image","id":"im/d4j6tk3e","slide":14,"name":"","alt":"v5原始帧，上传视频22秒；图示接近阶段，不据此确认接触帧","bbox":[660,239,532,222]}
+{"kind":"notes","id":"nt/w5mouy","slide":14,"text":"来源：评价报告第4.1、4.2节。v1人工第6–7行，v5人工第12行。\n\nv1 E027关联F0091/F0092；E028 supporting_evidence_ids包含F0096。所选92秒和96秒图已目视检查。\n\nv5人工21–27秒记录被分为E011、E012、E013。F0022是报告指定复核帧，但画面本身处于接近阶段，字幕不能代替接触事实。\n\n两例说明阶段组织能力，不能据其推算接管延迟、准确接触时刻或实际系统控制状态。\n\n原图：D:/数据汇总/数据汇总/v1/frames/frame_0091.jpg；D:/数据汇总/数据汇总/v5/frames/frame_0022.jpg。来源报告§4.1–4.2。v1刹车动作按字幕陈述理解，不推算接管延迟。v5单帧展示接近，不声称由该帧直接证实碰撞接触。"}
+{"kind":"slide","id":"sl/n3wfqb","slide":15,"title":"典型成效：诉求与素材区分","textShapes":10}
+{"kind":"shape","id":"sh/qxgrqtc3","slide":15,"name":"标题 1","placeholder":"title","bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/ry9sjyto","slide":15,"name":"内容占位符 2","bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/0nitwnul","slide":15,"name":"页面标题","text":"典型成效：诉求与素材区分","textPreview":"典型成效：诉求与素材区分","textChars":12,"textLines":1,"bbox":[88,75.42,1104,102.08]}
+{"kind":"textbox","id":"sh/1orapsbq","slide":15,"name":"页码","text":"15","textPreview":"15","textChars":2,"textLines":1,"bbox":[1137,673,52,26]}
+{"kind":"textbox","id":"sh/el0budcf","slide":15,"name":"v7 保存异常诉求","text":"v7 保存异常诉求","textPreview":"v7 保存异常诉求","textChars":9,"textLines":1,"bbox":[88,190,489,37]}
+{"kind":"textbox","id":"sh/fm9snit0","slide":15,"name":"v9 区分事故影像与后续素材","text":"v9 区分事故影像与后续素材","textPreview":"v9 区分事故影像与后续素材","textChars":14,"textLines":1,"bbox":[650,190,542,37]}
+{"kind":"textbox","id":"sh/hs7adobm","slide":15,"name":"“关不掉” “减不掉”","text":"“关不掉”\n“减不掉”","textPreview":"“关不掉” | “减不掉”","textChars":11,"textLines":2,"bbox":[303,266,281,108]}
+{"kind":"textbox","id":"sh/tw72lobq","slide":15,"name":"定位来源诉求， 保留调查价值。  制动状态和故障 原因均未确认。","text":"定位来源诉求，\n保留调查价值。\n\n制动状态和故障\n原因均未确认。","textPreview":"定位来源诉求， | 保留调查价值。 |  | 制动状态和故障 | 原因均未确认。","textChars":32,"textLines":5,"bbox":[303,399,281,171]}
+{"kind":"textbox","id":"sh/69gjatsf","slide":15,"name":"7 秒：夜间施工接近","text":"7 秒：夜间施工接近","textPreview":"7 秒：夜间施工接近","textChars":10,"textLines":1,"bbox":[650,427,258,50]}
+{"kind":"textbox","id":"sh/h0r2p8b2","slide":15,"name":"24 秒：白天对比素材","text":"24 秒：白天对比素材","textPreview":"24 秒：白天对比素材","textChars":11,"textLines":1,"bbox":[934,427,258,50]}
+{"kind":"textbox","id":"sh/gzi1g3ah","slide":15,"name":"E011 保留昼夜不符与素材拼接说明， 为避免跨素材混用提供复核入口。","text":"E011 保留昼夜不符与素材拼接说明，\n为避免跨素材混用提供复核入口。","textPreview":"E011 保留昼夜不符与素材拼接说明， | 为避免跨素材混用提供复核入口。","textChars":35,"textLines":2,"bbox":[650,501,542,89]}
+{"kind":"textbox","id":"sh/vy9knytw","slide":15,"name":"核心事实一致可以指来源陈述被正确保留，不能据此确认现实车辆故障。","text":"核心事实一致可以指来源陈述被正确保留，不能据此确认现实车辆故障。","textPreview":"核心事实一致可以指来源陈述被正确保留，不能据此确认现实车辆故障。","textChars":32,"textLines":1,"bbox":[88,620,1104,44]}
+{"kind":"image","id":"im/hkfi1cfm","slide":15,"name":"","alt":"v7在78秒附近的来源陈述画面","bbox":[88,246,185,327]}
+{"kind":"image","id":"im/fep43i5w","slide":15,"name":"","alt":"v9上传视频7秒，夜间施工接近","bbox":[650,247,258,170]}
+{"kind":"image","id":"im/0fy5cnmh","slide":15,"name":"","alt":"v9上传视频24秒，白天行驶画面，叠加字幕提及夜间","bbox":[934,247,258,170]}
+{"kind":"notes","id":"nt/n3wfqb","slide":15,"text":"来源：评价报告第4.3、4.4节。v7人工第14行，v9人工第26、28行。\n\nv7 F0078已目视确认字幕；报告C065、OBS029、OBS031可继续追查。仅声明诉求已保留，不验证实际制动效果。\n\nv9夜间图选F0007而非撞击后模糊帧：OBS004关联F0007，属于E003的5–8秒施工接近；归一化证据索引第15行，时间7秒。\n\nv9白天图选F0024：OBS012 evidence_ids包含F0024，E011关联OBS012及F0024；证据索引第49行，时间24秒。\n\n24秒图可见白天道路，字幕写“夜晚驾驶无激光雷达”。E011 uncertainties明确指出白天与夜晚字幕不符，前后属于不同时间、地点素材。\n\n所有源图只用已有产物核实，未重跑Agent或重新标注全视频。\n\n来源报告§4.3–4.4。图片：v7 frames/frame_0078.jpg；v9 frames/frame_0007.jpg与frame_0024.jpg。v9 7秒关联OBS004/E003，24秒关联OBS012/E011。24秒画面白天，字幕称“夜晚驾驶无激光雷达”。"}
+{"kind":"slide","id":"sl/yx9c06","slide":16,"title":"证据追溯与归因辅助","textShapes":10}
+{"kind":"shape","id":"sh/szy5cz6h","slide":16,"name":"标题 1","placeholder":"title","bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/t076547m","slide":16,"name":"内容占位符 2","bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/e1g7e9o7","slide":16,"name":"页面标题","text":"证据追溯与归因辅助","textPreview":"证据追溯与归因辅助","textChars":9,"textLines":1,"bbox":[88,75.42,1104,102.08]}
+{"kind":"textbox","id":"sh/f29o7ups","slide":16,"name":"页码","text":"16","textPreview":"16","textChars":2,"textLines":1,"bbox":[1137,673,52,26]}
+{"kind":"textbox","id":"sh/g3ipgz6d","slide":16,"name":"资料回溯基础","text":"资料回溯基础","textPreview":"资料回溯基础","textChars":6,"textLines":1,"bbox":[88,193,347,37]}
+{"kind":"textbox","id":"sh/14r6947y","slide":16,"name":"254 / 254","text":"254 / 254","textPreview":"254 / 254","textChars":9,"textLines":1,"bbox":[88,253,336,59]}
+{"kind":"textbox","id":"sh/2507i9oj","slide":16,"name":"事件有支持证据与观察","text":"事件有支持证据与观察","textPreview":"事件有支持证据与观察","textChars":10,"textLines":1,"bbox":[88,320,357,40]}
+{"kind":"textbox","id":"sh/3q9obep4","slide":16,"name":"14,733 / 14,733","text":"14,733 / 14,733","textPreview":"14,733 / 14,733","textChars":15,"textLines":1,"bbox":[88,395,357,57]}
+{"kind":"textbox","id":"sh/7mdw7e5k","slide":16,"name":"证据引用可解析","text":"证据引用可解析","textPreview":"证据引用可解析","textChars":7,"textLines":1,"bbox":[88,460,357,40]}
+{"kind":"textbox","id":"sh/mlkvy9oz","slide":16,"name":"724 条假设均未验证","text":"724 条假设均未验证","textPreview":"724 条假设均未验证","textChars":11,"textLines":1,"bbox":[88,542,360,40]}
+{"kind":"textbox","id":"sh/9ove9onq","slide":16,"name":"v9 H012：障碍物识别不足假设","text":"v9 H012：障碍物识别不足假设","textPreview":"v9 H012：障碍物识别不足假设","textChars":17,"textLines":1,"bbox":[493,193,699,37]}
+{"kind":"textbox","id":"sh/zitw3u5o","slide":16,"name":"引用可解析表示能够找到材料；反事实提供验证思路，相关语义与因果关系仍待核验。","text":"引用可解析表示能够找到材料；反事实提供验证思路，相关语义与因果关系仍待核验。","textPreview":"引用可解析表示能够找到材料；反事实提供验证思路，相关语义与因果关系仍待核验。","textChars":38,"textLines":1,"bbox":[88,620,1104,44]}
+{"kind":"table","id":"tb/fmx0vqtk","slide":16,"name":"","rows":6,"cols":2,"preview":"要素 | 假设中的内容","bbox":[493,249,699,337]}
+{"kind":"notes","id":"nt/yx9c06","slide":16,"text":"来源：评价报告第5.2节，v9 hypotheses.jsonl第12行H012，关联E005。\n\nH012原始措辞较肯定，本页按报告评价口径标为待验证假设，避免把模型生成的根因描述当作事实。\n\n原始反事实改变感知条件；保持夜间、速度、道路布局和驾驶员初始状态；替代解释包括驾驶员干预、系统已识别但规划/执行问题。\n\n报告提醒：正确感知并不必然保证正确规划或执行，预期差异仍为待验证推演。\n\nH014更接近证据补全设想；后续应将补信息与真正改变触发条件的反事实分开评价。\n\n全部724条假设均unverified；254个事件均要求人工复核；复核队列1048项均未关闭。不报告根因准确率或已经节省的人工工时。\n\n来源报告§3.1、§5.1–5.2。v9 E005关联假设H012，verification_status为unverified。正确感知不必然保证规划与执行正确。全部254个事件保留复核要求，1048项复核队列均未关闭。"}
+{"kind":"slide","id":"sl/0j0osx","slide":17,"title":"两个典型偏差","textShapes":7}
+{"kind":"shape","id":"sh/183m5gr6","slide":17,"name":"标题 1","placeholder":"title","bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/07u5cbql","slide":17,"name":"内容占位符 2","bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/ri14zm94","slide":17,"name":"页面标题","text":"两个典型偏差","textPreview":"两个典型偏差","textChars":6,"textLines":1,"bbox":[88,75.42,1104,102.08]}
+{"kind":"textbox","id":"sh/qhsn61sj","slide":17,"name":"页码","text":"17","textPreview":"17","textChars":2,"textLines":1,"bbox":[1137,673,52,26]}
+{"kind":"textbox","id":"sh/dk3m1wru","slide":17,"name":"v1 数值与单位未同步修正","text":"v1 数值与单位未同步修正","textPreview":"v1 数值与单位未同步修正","textChars":13,"textLines":1,"bbox":[88,190,532,37]}
+{"kind":"textbox","id":"sh/sja58rqp","slide":17,"name":"v8 说明截图被当作车辆界面","text":"v8 说明截图被当作车辆界面","textPreview":"v8 说明截图被当作车辆界面","textChars":14,"textLines":1,"bbox":[660,190,532,37]}
+{"kind":"textbox","id":"sh/o7ax0j69","slide":17,"name":"补证识别：距离路口 215 米 最终摘要：215 km/h（或距离读数）","text":"补证识别：距离路口 215 米\n最终摘要：215 km/h（或距离读数）","textPreview":"补证识别：距离路口 215 米 | 最终摘要：215 km/h（或距离读数）","textChars":36,"textLines":2,"bbox":[88,495,532,89]}
+{"kind":"textbox","id":"sh/p83e9o7u","slide":17,"name":"补证已识别 “叠加字幕与截图”  最终摘要仍提升为 车辆原生界面观察","text":"补证已识别\n“叠加字幕与截图”\n\n最终摘要仍提升为\n车辆原生界面观察","textPreview":"补证已识别 | “叠加字幕与截图” |  | 最终摘要仍提升为 | 车辆原生界面观察","textChars":34,"textLines":5,"bbox":[891,268,301,248]}
+{"kind":"textbox","id":"sh/2lsfy9o3","slide":17,"name":"两例均要求把补证发现回写最终摘要，并同时保留单位、来源层级和限制条件。","text":"两例均要求把补证发现回写最终摘要，并同时保留单位、来源层级和限制条件。","textPreview":"两例均要求把补证发现回写最终摘要，并同时保留单位、来源层级和限制条件。","textChars":35,"textLines":1,"bbox":[88,620,1104,44]}
+{"kind":"image","id":"im/y1s361kz","slide":17,"name":"","alt":"v1补证帧，导航区域为距离路口215米","bbox":[88,241,532,230]}
+{"kind":"image","id":"im/z214fmlk","slide":17,"name":"","alt":"v8原始7秒帧，是说明截图，不是车辆原生界面","bbox":[660,241,201,333]}
+{"kind":"notes","id":"nt/0j0osx","slide":17,"text":"来源：评价报告第6.1、6.2节。\n\nv1 E026（89–91秒）写“215km/h（或距离读数）”；已关联E026_REF001（observations.jsonl第127行）明确是“距离路口215米”。补证帧可见数字位于导航区域。\n\nv8 E004（6–7秒）将说明截图中的NOA信息写为车辆界面观察；已关联E004_REF002（observations.jsonl第48行）已识别叠加字幕与截图。\n\nv8人工7–11秒区间含混合内容，10秒已经出现破裂后视镜，不能据说明截图问题把E005车损描述也判为错误。\n\nv8截图中的品牌和AEB工作范围等文字是源材料内容，本PPT仅用作来源分类案例，不对其产品事实作独立核实。\n\n来源报告§6.1–6.2。v1 E026与E026_REF001；补证图为derived_media/refine_E026_RF/E026_RF_S029_00_t1.00.jpg。v8 E004与E004_REF002，原帧F0007。明确冲突仅针对说明截图被错误提升为原生界面事实，不将同区间的真实车损图一并判错。"}
+{"kind":"slide","id":"sl/9axnnn","slide":18,"title":"后续改进重点","textShapes":3}
+{"kind":"shape","id":"sh/d8ryt4v6","slide":18,"name":"标题 1","placeholder":"title","bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/s7yxkzel","slide":18,"name":"内容占位符 2","bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/fa9gvedc","slide":18,"name":"页面标题","text":"后续改进重点","textPreview":"后续改进重点","textChars":6,"textLines":1,"bbox":[88,75.42,1104,102.08]}
+{"kind":"textbox","id":"sh/e90fm9wr","slide":18,"name":"页码","text":"18","textPreview":"18","textChars":2,"textLines":1,"bbox":[1137,673,52,26]}
+{"kind":"textbox","id":"sh/0bixojex","slide":18,"name":"当前定位：可追溯的线索筛查与研究辅助原型，继续完善最终汇总和验证基础。","text":"当前定位：可追溯的线索筛查与研究辅助原型，继续完善最终汇总和验证基础。","textPreview":"当前定位：可追溯的线索筛查与研究辅助原型，继续完善最终汇总和验证基础。","textChars":35,"textLines":1,"bbox":[88,620,1104,44]}
+{"kind":"table","id":"tb/o7qt0b6l","slide":18,"name":"","rows":7,"cols":2,"preview":"优先方向 | 具体完善内容","bbox":[88,204,1104,374]}
+{"kind":"notes","id":"nt/9axnnn","slide":18,"text":"来源：评价报告第5.3、6.3、7节。\n\n当前事件scene全为空，vehicle_identity全为空对象；陈述层场景172条、车辆身份85条，主要缺口是事件级汇总。\n\n优先方向来自本次已观察到的问题：v1 E026、v8 E004补证未回写；v1部分细阶段未覆盖；v4摘要不足；v10剪辑观察未关联；v8/v9跨素材关联；v10确定性措辞与限制不一致。\n\n把可定位陈述及其来源等级、素材归属、不确定性汇总到事件后，可支持场景和车型分组研究；当前不做品牌可靠性排名。\n\n本轮PPT是材料整理，不修改Agent，不重跑数据。独立复核、完整标注、重复运行与对照实验是后续研究安排。\n\n来源报告§6.3及§7。172条场景陈述、85条车辆身份陈述已存在，但事件级scene和vehicle_identity尚未汇总落地。本页为研究改进方向，不表示本轮已修改Agent或执行对照实验。"}

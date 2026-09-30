@@ -1,0 +1,752 @@
+{
+  "chapter": "Agent 工作效果对比评价",
+  "run_id": "20260927-113112-432900-live",
+  "source_document": "D:/数据汇总/driving_defect_agent/reports/Agent工作效果对比评价_20260927-113112-432900-live.md",
+  "slide_numbering": "正文页 11–18；不含封面和结尾",
+  "copy_policy": "资产为源图逐字节复制，原件未修改；不得把字幕声称或假设当成已核实的故障事实。",
+  "editorial_caveats": [
+    "85.7% 为核心事实一致与部分一致合计，不能称为准确率。",
+    "254 条事件记录不等于 254 个独立缺陷；724 条假设全部未验证。",
+    "这是单次运行、35 条重点片段参考的语义对照，未经过独立双人复核。",
+    "不报告整体 Precision、Recall、F1、根因准确率、工时节省或品牌可靠性排名。",
+    "引用可解析率衡量可追溯性，不代表引用语义全部正确。"
+  ],
+  "assets": [
+    {
+      "id": "v1_exit",
+      "path": "D:/数据汇总/driving_defect_agent/reports/ppt/.build/assets/eval_v1_exit_0092.jpg",
+      "original": "D:/数据汇总/数据汇总/v1/frames/frame_0092.jpg",
+      "frame_id": "F0092",
+      "video": "v1",
+      "timestamp_sec": 92,
+      "verified": "已目视检查；文件复制哈希一致",
+      "use": "退出文字与停车",
+      "caveat": "踩刹车为来源字幕；不由该帧推算接管延迟。"
+    },
+    {
+      "id": "v1_surround",
+      "path": "D:/数据汇总/driving_defect_agent/reports/ppt/.build/assets/eval_v1_surround_0096.jpg",
+      "original": "D:/数据汇总/数据汇总/v1/frames/frame_0096.jpg",
+      "frame_id": "F0096",
+      "video": "v1",
+      "timestamp_sec": 96,
+      "verified": "已目视检查；E028 supporting_evidence_ids 包含 F0096；文件复制哈希一致",
+      "use": "360°环视检查"
+    },
+    {
+      "id": "v5_approach",
+      "path": "D:/数据汇总/driving_defect_agent/reports/ppt/.build/assets/eval_v5_approach_0022.jpg",
+      "original": "D:/数据汇总/数据汇总/v5/frames/frame_0022.jpg",
+      "frame_id": "F0022",
+      "video": "v5",
+      "timestamp_sec": 22,
+      "verified": "已目视检查；报告第4.2节指定原始帧；文件复制哈希一致",
+      "use": "半挂车接近阶段",
+      "caveat": "该帧字幕声称碰撞；图片本身是接近画面，不用于断言准确接触时刻。"
+    },
+    {
+      "id": "v7_claim",
+      "path": "D:/数据汇总/driving_defect_agent/reports/ppt/.build/assets/eval_v7_claim_0078.jpg",
+      "original": "D:/数据汇总/数据汇总/v7/frames/frame_0078.jpg",
+      "frame_id": "F0078",
+      "video": "v7",
+      "timestamp_sec": 78,
+      "verified": "已目视检查，可见字幕“我减不掉啊”；文件复制哈希一致",
+      "use": "用户异常诉求保留",
+      "caveat": "表示来源陈述，不证明制动系统失效。"
+    },
+    {
+      "id": "v9_night",
+      "path": "D:/数据汇总/driving_defect_agent/reports/ppt/.build/assets/eval_v9_night_0007.jpg",
+      "original": "D:/数据汇总/数据汇总/v9/frames/frame_0007.jpg",
+      "frame_id": "F0007",
+      "video": "v9",
+      "timestamp_sec": 7,
+      "verified": "已目视检查；OBS004 evidence_ids 指向 F0007；normalized/evidence.jsonl 第15行；package_root 已解析为 D:/数据汇总/数据汇总/v9；复制哈希一致",
+      "use": "夜间事故前施工接近画面",
+      "evidence_source": "D:/数据汇总/driving_defect_agent/runs/20260927-113112-432900-live/videos/BV1bkZSY6Ejd/observations.jsonl:4",
+      "caveat": "画面底部“未识别障碍物”为发布者字幕，不能作为系统感知故障的确证。"
+    },
+    {
+      "id": "v9_day",
+      "path": "D:/数据汇总/driving_defect_agent/reports/ppt/.build/assets/eval_v9_day_0024.jpg",
+      "original": "D:/数据汇总/数据汇总/v9/frames/frame_0024.jpg",
+      "frame_id": "F0024",
+      "video": "v9",
+      "timestamp_sec": 24,
+      "verified": "已目视检查，为白天画面且字幕写“夜晚驾驶无激光雷达”；OBS012/E011均关联；normalized/evidence.jsonl第49行；复制哈希一致",
+      "use": "后续白天素材与夜间字幕不一致",
+      "evidence_source": "D:/数据汇总/driving_defect_agent/runs/20260927-113112-432900-live/videos/BV1bkZSY6Ejd/observations.jsonl:12",
+      "caveat": "原事故与后续白天素材应分离，不能串为连续事故过程。"
+    },
+    {
+      "id": "v1_distance",
+      "path": "D:/数据汇总/driving_defect_agent/reports/ppt/.build/assets/eval_v1_navigation_distance.jpg",
+      "original": "D:/数据汇总/driving_defect_agent/runs/20260927-113112-432900-live/videos/BV14spBzFE2V/derived_media/refine_E026_RF/E026_RF_S029_00_t1.00.jpg",
+      "frame_id": "E026_RF_S029_00_t1.00",
+      "video": "v1",
+      "verified": "已目视检查，215 位于导航距离区域；报告第6.1节链接；复制哈希一致",
+      "use": "距离与速度的归属错误",
+      "caveat": "不要把 215 引用为车速。"
+    },
+    {
+      "id": "v8_explanation",
+      "path": "D:/数据汇总/driving_defect_agent/reports/ppt/.build/assets/eval_v8_explanation_0007.jpg",
+      "original": "D:/数据汇总/数据汇总/v8/frames/frame_0007.jpg",
+      "frame_id": "F0007",
+      "video": "v8",
+      "timestamp_sec": 7,
+      "verified": "已目视检查，为说明截图；报告第6.2节明确引用；复制哈希一致",
+      "use": "说明截图被误归为原生车辆界面",
+      "caveat": "截图中的产品或功能陈述只是案例来源文字，不作为PPT独立核实的产品结论。"
+    }
+  ],
+  "slides": [
+    {
+      "slide_number": 11,
+      "title": "评价对象与判定口径",
+      "lead": "以 35 条重点片段人工参考，检查最终事件是否表达了同一核心事实。",
+      "layout_hint": "左侧评价对象和对齐流程；右侧五类判定。底部短口径条。",
+      "bullets": [
+        "评价对象：10 个视频的最终事件、证据关联与归因假设",
+        "按 BV 号唯一对齐；时间相交仅用于寻找候选",
+        "重点核对对象、行为、阶段、来源与不确定性"
+      ],
+      "flow": [
+        "人工重点片段",
+        "BV号与时间候选对齐",
+        "最终事件语义核查",
+        "五类判定"
+      ],
+      "categories": [
+        {
+          "label": "核心事实一致",
+          "detail": "主要事实与来源边界相符"
+        },
+        {
+          "label": "部分一致",
+          "detail": "主线对应，细节或阶段仍有缺口"
+        },
+        {
+          "label": "未覆盖",
+          "detail": "最终事件未表达参考核心内容"
+        },
+        {
+          "label": "证据不足",
+          "detail": "现有记录不足以确定对应"
+        },
+        {
+          "label": "明确冲突",
+          "detail": "关键事实或来源层级相反"
+        }
+      ],
+      "footer": "单次运行、重点片段参考；一致性不等同于完整基准准确率。",
+      "notes": [
+        "来源：评价报告第2.1、2.2节。人工参考为《汇总.xlsx》Sheet1 第2–36行，共35条；10个视频通过超链接BV号唯一对应。",
+        "比较以最终 events.jsonl 的摘要、类型和 uncertainties 为主；中间 observations/claims 仅作为解释性证据，尚未进入最终事件的发现不计最终覆盖。",
+        "4个视频人工终点略超时长，区间比较裁剪至实际时长；10个零时长事件作为点事件处理。",
+        "核心事实也包括某来源说了什么；例如v7诉求一致不意味着刹车失效得到确认。",
+        "评级尚未经过独立双人复核。现有重点片段不支持整体Precision、Recall、F1或归因准确率。"
+      ],
+      "source_references": [
+        {
+          "file": "D:/数据汇总/driving_defect_agent/reports/Agent工作效果对比评价_20260927-113112-432900-live.md",
+          "section": "2.1 输入材料与研究目标",
+          "lines": "20–33"
+        },
+        {
+          "file": "D:/数据汇总/driving_defect_agent/reports/Agent工作效果对比评价_20260927-113112-432900-live.md",
+          "section": "2.2 对齐与判定方法",
+          "lines": "35–53"
+        }
+      ],
+      "long_text_warning": "五类判定细节宜每类1行；完整定义放备注。"
+    },
+    {
+      "slide_number": 12,
+      "title": "35 条参考中，30 条已有核心或部分对应",
+      "lead": "核心事实一致 40.0%；部分一致 45.7%。",
+      "layout_hint": "左侧五类水平条形图；右侧两级关键比例和小型视频整体结果。",
+      "chart": {
+        "type": "horizontal_bar",
+        "denominator": 35,
+        "data": [
+          {
+            "label": "核心事实一致",
+            "count": 14,
+            "percentage": 40
+          },
+          {
+            "label": "部分一致",
+            "count": 16,
+            "percentage": 45.7
+          },
+          {
+            "label": "未覆盖",
+            "count": 3,
+            "percentage": 8.6
+          },
+          {
+            "label": "证据不足",
+            "count": 1,
+            "percentage": 2.9
+          },
+          {
+            "label": "明确冲突",
+            "count": 1,
+            "percentage": 2.9
+          }
+        ],
+        "preferred_label": "条数 + 百分比",
+        "palette_semantics": "核心使用模板主色；部分用浅主色；未覆盖/不足用灰；冲突用克制的强调色"
+      },
+      "metrics": [
+        {
+          "value": "14 / 35",
+          "label": "核心事实一致",
+          "percentage": "40.0%"
+        },
+        {
+          "value": "30 / 35",
+          "label": "核心或部分一致",
+          "percentage": "85.7%"
+        }
+      ],
+      "video_level": {
+        "core": 2,
+        "partial": 7,
+        "insufficient": 1,
+        "caption": "按视频呈现：2个核心一致、7个部分一致、1个证据不足"
+      },
+      "footer": "85.7% 是一致性条目合计，不能标为事件识别准确率。",
+      "notes": [
+        "来源：评价报告第3.2、3.3节，35条分布为14/16/3/1/1。",
+        "百分比独立四舍五入至1位小数，显示百分比总和为100.1%，图表以整数条数为基准。",
+        "3条未覆盖分别为v1风险接近、v1疑似擦碰、v8发布者口播，不等于漏检3起独立事故。",
+        "明确冲突集中在v8说明截图来源归类，并影响相邻条目部分一致判定；不能把这些条目直接相加为独立错误事件数。",
+        "人工标注粒度不均，v1、v8、v9、v10细分较多；逐视频结果与条目结果应一并呈现。"
+      ],
+      "source_references": [
+        {
+          "file": "D:/数据汇总/driving_defect_agent/reports/Agent工作效果对比评价_20260927-113112-432900-live.md",
+          "section": "3.2 参考条目一致性分布",
+          "lines": "79–92"
+        },
+        {
+          "file": "D:/数据汇总/driving_defect_agent/reports/Agent工作效果对比评价_20260927-113112-432900-live.md",
+          "section": "3.3 逐视频等权呈现",
+          "lines": "94–111"
+        }
+      ],
+      "long_text_warning": "无需在图旁复述全部五类定义；已在第11页交代。"
+    },
+    {
+      "slide_number": 13,
+      "title": "逐视频对照：主要过程已提取，细阶段仍需完善",
+      "lead": "10 个视频等权呈现；五类数字是参考条目数。",
+      "layout_hint": "10行紧凑原生表格；正文只放short_result，原文放备注；五类计数全部保留。",
+      "table": {
+        "count_order": [
+          "核心",
+          "部分",
+          "未覆盖",
+          "不足",
+          "冲突"
+        ],
+        "columns": [
+          "视频",
+          "五类条目数",
+          "整体判断",
+          "结果摘要"
+        ],
+        "rows": [
+          {
+            "video": "v1",
+            "bv": "BV14spBzFE2V",
+            "annotation_rows": "2–8",
+            "counts": [
+              4,
+              1,
+              2,
+              0,
+              0
+            ],
+            "judgement": "部分一致",
+            "short_result": "停车检查已对应；风险接近、疑似擦碰未覆盖",
+            "original_result": "窄路低速、字幕人工输入、退出停车和环视检查均有明确结果；风险接近与疑似擦碰尚未形成对应的最终事件。"
+          },
+          {
+            "video": "v2",
+            "bv": "BV1a5Le6REoQ",
+            "annotation_rows": "9",
+            "counts": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "judgement": "部分一致",
+            "short_result": "入弯、护栏逼近主线较好；手部控制描述有差异",
+            "original_result": "入弯加速、护栏逼近和疑似碰撞主线覆盖较好；持续离盘与握盘转向描述存在局部差异。"
+          },
+          {
+            "video": "v3",
+            "bv": "BV1aF7B6BEsB",
+            "annotation_rows": "10",
+            "counts": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "judgement": "部分一致",
+            "short_result": "接近、减速已提取；近碰撞与控制主体边界待加强",
+            "original_result": "提取封闭设施接近、减速与通过过程；近碰撞表述和制动控制主体的证据边界需加强。"
+          },
+          {
+            "video": "v4",
+            "bv": "BV1bMNt6uETK",
+            "annotation_rows": "11",
+            "counts": [
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            "judgement": "证据不足",
+            "short_result": "退出、近墙声称已提取；屏摄与截断影响确认",
+            "original_result": "退出及近墙声称已被提取并关联；屏摄条件及摘要截断影响最终主线的确认。"
+          },
+          {
+            "video": "v5",
+            "bv": "BV12MEc6hEUa",
+            "annotation_rows": "12",
+            "counts": [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "judgement": "核心事实一致",
+            "short_result": "接近、碰撞、事后后果分段；系统状态未确认",
+            "original_result": "接近半挂车、碰撞及事故后静态后果得到分段提取，实际辅助驾驶状态保持未确认。"
+          },
+          {
+            "video": "v6",
+            "bv": "BV1UCvQBmE6e",
+            "annotation_rows": "13",
+            "counts": [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "judgement": "部分一致",
+            "short_result": "多视角与车损较充分；本车和大车运动关系待完善",
+            "original_result": "多视角、大车交互、遮挡和车损覆盖较充分；本车汇入与大车切入的运动关系未完全对应。"
+          },
+          {
+            "video": "v7",
+            "bv": "BV1VStJ6UEAD",
+            "annotation_rows": "14",
+            "counts": [
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "judgement": "核心事实一致",
+            "short_result": "核心诉求已定位；未据此确认实际制动故障",
+            "original_result": "核心异常诉求被定位，且与实际制动状态的确证相区分；此判断仅认可来源陈述层面的对应。"
+          },
+          {
+            "video": "v8",
+            "bv": "BV18ydzYrEyk",
+            "annotation_rows": "15–21",
+            "counts": [
+              2,
+              3,
+              1,
+              0,
+              1
+            ],
+            "judgement": "部分一致",
+            "short_result": "施工与测试素材有对应；截图来源、口播仍有差异",
+            "original_result": "施工接近、字幕碰撞线索和后段测试素材有对应；说明截图来源错置、口播遗漏及跨素材关联仍需完善。"
+          },
+          {
+            "video": "v9",
+            "bv": "BV1bkZSY6Ejd",
+            "annotation_rows": "22–28",
+            "counts": [
+              4,
+              3,
+              0,
+              0,
+              0
+            ],
+            "judgement": "部分一致",
+            "short_result": "碰撞及素材边界较好；改道、接近、事后阶段待完善",
+            "original_result": "主要碰撞事实和不同素材边界对应较好；前车改道、危险接近及碰撞后遮挡的阶段表达尚不完整。"
+          },
+          {
+            "video": "v10",
+            "bv": "BV19e5S6PE8X",
+            "annotation_rows": "29–36",
+            "counts": [
+              2,
+              6,
+              0,
+              0,
+              0
+            ],
+            "judgement": "部分一致",
+            "short_result": "货车与界面线索可定位；动态、剪辑与措辞待统一",
+            "original_result": "侧翻货车、界面标记与碰撞叙述均可定位；动态过程、剪辑表达及确定性措辞仍需统一。"
+          }
+        ]
+      },
+      "footer": "五类顺序：核心／部分／未覆盖／不足／冲突；不由条目比例另算综合准确率。",
+      "notes": [
+        "来源：评价报告第3.3节原表。BV号、人工标注行、五类计数和整体判定均按原文保留。",
+        "表中结果摘要为压缩表达，original_result 字段保存报告的完整原句，可写入备注。",
+        "视频层面：v5、v7核心事实一致；v1、v2、v3、v6、v8、v9、v10部分一致；v4证据不足。",
+        "整体判断同时考虑主要过程和关键边界。一个事件可以对应多个人工参考阶段，条目数不是独立事件数。"
+      ],
+      "source_references": [
+        {
+          "file": "D:/数据汇总/driving_defect_agent/reports/Agent工作效果对比评价_20260927-113112-432900-live.md",
+          "section": "3.3 逐视频等权呈现",
+          "lines": "94–111"
+        }
+      ],
+      "long_text_warning": "此页是全文密度最高页；不要把 BV 号和完整原句同时放进正文。推荐正文四列、原文备注，字号须保持可读。"
+    },
+    {
+      "slide_number": 14,
+      "title": "成效案例：形成可追查的事件阶段链",
+      "lead": "从较粗的人工片段描述，提取带时间和证据的分析单元。",
+      "layout_hint": "左右两个案例；每侧一幅主图和简短时间线。v1可选两幅小图并排。",
+      "cases": [
+        {
+          "id": "v1",
+          "title": "v1 退出—停车—环视检查",
+          "image_ids": [
+            "v1_exit",
+            "v1_surround"
+          ],
+          "primary_image_id": "v1_surround",
+          "caption": "92 s 退出文字与静止；96 s 环视检查",
+          "bullets": [
+            "E027：91–93 s，静止与退出文字",
+            "E028：94–102 s，点击中控与360°环视"
+          ],
+          "takeaway": "过程主线连续，可回查到帧与陈述。",
+          "caveat": "实际系统状态未确认；踩刹车按字幕陈述理解。"
+        },
+        {
+          "id": "v5",
+          "title": "v5 事故摘要分解为三个阶段",
+          "image_ids": [
+            "v5_approach"
+          ],
+          "primary_image_id": "v5_approach",
+          "caption": "22 s：接近半挂车的原始画面",
+          "timeline": [
+            {
+              "time": "21–22.5 s",
+              "label": "接近"
+            },
+            {
+              "time": "22.5–24 s",
+              "label": "碰撞线索"
+            },
+            {
+              "time": "25–27 s",
+              "label": "静态后果"
+            }
+          ],
+          "takeaway": "粗粒度事故摘要被展开为可复核阶段。",
+          "caveat": "辅助驾驶实际控制状态未确认；不认定精确接触帧。"
+        }
+      ],
+      "footer": "保留来源与不确定性：片段可追查，不等于已验证车辆故障。",
+      "notes": [
+        "来源：评价报告第4.1、4.2节。v1人工第6–7行，v5人工第12行。",
+        "v1 E027关联F0091/F0092；E028 supporting_evidence_ids包含F0096。所选92秒和96秒图已目视检查。",
+        "v5人工21–27秒记录被分为E011、E012、E013。F0022是报告指定复核帧，但画面本身处于接近阶段，字幕不能代替接触事实。",
+        "两例说明阶段组织能力，不能据其推算接管延迟、准确接触时刻或实际系统控制状态。"
+      ],
+      "source_references": [
+        {
+          "file": "D:/数据汇总/driving_defect_agent/reports/Agent工作效果对比评价_20260927-113112-432900-live.md",
+          "section": "4.1 v1 退出停车与环视检查",
+          "lines": "115–119"
+        },
+        {
+          "file": "D:/数据汇总/driving_defect_agent/reports/Agent工作效果对比评价_20260927-113112-432900-live.md",
+          "section": "4.2 v5 将人工事故摘要拆解为可复核阶段",
+          "lines": "121–125"
+        }
+      ],
+      "long_text_warning": "每例正文最多2条说明；详细时间与证据ID放备注。"
+    },
+    {
+      "slide_number": 15,
+      "title": "成效案例：保留异常诉求，区分不同素材",
+      "lead": "来源陈述、可见画面与事故时间线需要分别表达。",
+      "layout_hint": "左侧v7竖图及诉求卡；右侧v9夜间/白天两图对比，保留原图比例。",
+      "cases": [
+        {
+          "id": "v7",
+          "title": "v7 识别“关不掉／减不掉”",
+          "image_ids": [
+            "v7_claim"
+          ],
+          "primary_image_id": "v7_claim",
+          "caption": "78 s：来源字幕“我减不掉啊”",
+          "bullets": [
+            "E015／E017 定位 77–79 s 异常诉求",
+            "明确保留实际制动状态不可确认"
+          ],
+          "takeaway": "高价值线索得到保存，结论强度受控。",
+          "caveat": "认可来源陈述对应，不宣告刹车失效。"
+        },
+        {
+          "id": "v9",
+          "title": "v9 区分夜间事故与后续素材",
+          "image_ids": [
+            "v9_night",
+            "v9_day"
+          ],
+          "captions": [
+            "7 s：夜间施工接近",
+            "24 s：白天画面与“夜晚”字幕"
+          ],
+          "bullets": [
+            "E005 保留碰撞与视角变化线索",
+            "E011 标注白天画面、夜间字幕不一致"
+          ],
+          "takeaway": "避免将后续素材套入同一事故时间线。",
+          "caveat": "事件标签与关联层仍需更严格遵循素材边界。"
+        }
+      ],
+      "footer": "v7 体现诉求识别；v9 体现来源与连续性辨识。",
+      "notes": [
+        "来源：评价报告第4.3、4.4节。v7人工第14行，v9人工第26、28行。",
+        "v7 F0078已目视确认字幕；报告C065、OBS029、OBS031可继续追查。仅声明诉求已保留，不验证实际制动效果。",
+        "v9夜间图选F0007而非撞击后模糊帧：OBS004关联F0007，属于E003的5–8秒施工接近；归一化证据索引第15行，时间7秒。",
+        "v9白天图选F0024：OBS012 evidence_ids包含F0024，E011关联OBS012及F0024；证据索引第49行，时间24秒。",
+        "24秒图可见白天道路，字幕写“夜晚驾驶无激光雷达”。E011 uncertainties明确指出白天与夜晚字幕不符，前后属于不同时间、地点素材。",
+        "所有源图只用已有产物核实，未重跑Agent或重新标注全视频。"
+      ],
+      "source_references": [
+        {
+          "file": "D:/数据汇总/driving_defect_agent/reports/Agent工作效果对比评价_20260927-113112-432900-live.md",
+          "section": "4.3 v7 保留高价值异常诉求",
+          "lines": "127–131"
+        },
+        {
+          "file": "D:/数据汇总/driving_defect_agent/reports/Agent工作效果对比评价_20260927-113112-432900-live.md",
+          "section": "4.4 v9 识别事故影像与后续对比素材",
+          "lines": "133–137"
+        },
+        {
+          "file": "D:/数据汇总/driving_defect_agent/runs/20260927-113112-432900-live/videos/BV1bkZSY6Ejd/observations.jsonl",
+          "lines": "4,12",
+          "section": "OBS004 / OBS012"
+        },
+        {
+          "file": "D:/数据汇总/driving_defect_agent/runs/20260927-113112-432900-live/videos/BV1bkZSY6Ejd/events.jsonl",
+          "lines": "11",
+          "section": "E011 uncertainties"
+        }
+      ],
+      "long_text_warning": "v7图为竖版且含黑边；不拉伸、不裁掉字幕。v9两图需要明确各自时刻，避免让观众误读为同一连续过程。"
+    },
+    {
+      "slide_number": 16,
+      "title": "归因辅助：把原因猜测变成可验证的问题",
+      "lead": "以 v9 H012 为例：障碍物识别不足是待验证假设。",
+      "layout_hint": "中央反事实链，旁边替代解释和验证材料；上方明确“未验证”状态。",
+      "status": "unverified／未验证",
+      "hypothesis": "可能存在前方施工障碍物识别不足",
+      "counterfactual": [
+        {
+          "label": "改变条件",
+          "text": "系统正确识别施工障碍物"
+        },
+        {
+          "label": "保持条件",
+          "text": "夜间、车速、道路布局、驾驶员初始状态"
+        },
+        {
+          "label": "预期差异",
+          "text": "可能减速、停车或避让"
+        },
+        {
+          "label": "替代解释",
+          "text": "已识别但规划／执行异常，或驾驶员干预"
+        },
+        {
+          "label": "缺失信息",
+          "text": "车辆日志、目标检测／预警显示、驾驶员操作"
+        },
+        {
+          "label": "所需验证",
+          "text": "获取行驶数据，复现相同光照与路况"
+        }
+      ],
+      "metrics": [
+        {
+          "value": "724 / 724",
+          "label": "含反事实与缺失信息"
+        },
+        {
+          "value": "723 / 724",
+          "label": "含替代解释"
+        },
+        {
+          "value": "724 条",
+          "label": "全部未验证"
+        }
+      ],
+      "footer": "字段完整衡量假设组织能力，不能证明因果推断或根因正确性。",
+      "notes": [
+        "来源：评价报告第5.2节，v9 hypotheses.jsonl第12行H012，关联E005。",
+        "H012原始措辞较肯定，本页按报告评价口径标为待验证假设，避免把模型生成的根因描述当作事实。",
+        "原始反事实改变感知条件；保持夜间、速度、道路布局和驾驶员初始状态；替代解释包括驾驶员干预、系统已识别但规划/执行问题。",
+        "报告提醒：正确感知并不必然保证正确规划或执行，预期差异仍为待验证推演。",
+        "H014更接近证据补全设想；后续应将补信息与真正改变触发条件的反事实分开评价。",
+        "全部724条假设均unverified；254个事件均要求人工复核；复核队列1048项均未关闭。不报告根因准确率或已经节省的人工工时。"
+      ],
+      "source_references": [
+        {
+          "file": "D:/数据汇总/driving_defect_agent/reports/Agent工作效果对比评价_20260927-113112-432900-live.md",
+          "section": "5.2 归因输出具有可讨论和可验证的结构",
+          "lines": "147–165"
+        },
+        {
+          "file": "D:/数据汇总/driving_defect_agent/runs/20260927-113112-432900-live/videos/BV1bkZSY6Ejd/hypotheses.jsonl",
+          "lines": "12",
+          "section": "H012"
+        }
+      ],
+      "long_text_warning": "六个要素各控制在1–2行，完整解释放备注。"
+    },
+    {
+      "slide_number": 17,
+      "title": "典型差异：补证结论未充分回写最终摘要",
+      "lead": "两类错误指向同一改进点：合并时应解决来源与单位冲突。",
+      "layout_hint": "左右双案例，源帧在上，“已识别／最终摘要／改进”三行在下；距离帧可作局部放大但须保留原始截图为依据。",
+      "cases": [
+        {
+          "id": "v1_distance",
+          "title": "v1 导航距离被混入速度表述",
+          "image_ids": [
+            "v1_distance"
+          ],
+          "caption": "补证图：215 位于导航距离区域",
+          "recognized": "补证：距离路口 215 米",
+          "final_summary": "最终摘要：215 km/h（或距离读数）",
+          "fix": "数值绑定界面区域与单位，回写已确认修正",
+          "caveat": "本次不将215作为车速引用。"
+        },
+        {
+          "id": "v8_source",
+          "title": "v8 说明截图被归为车辆界面",
+          "image_ids": [
+            "v8_explanation"
+          ],
+          "caption": "7 s：说明截图，非原生车辆界面",
+          "recognized": "补证：叠加字幕与截图",
+          "final_summary": "最终摘要：车辆界面“注意障碍、减速中”",
+          "fix": "区分说明截图、来源声称与原生界面观察",
+          "caveat": "冲突仅指截图来源层级；车损描述本身不判错。"
+        }
+      ],
+      "footer": "应先消解初始观察与补证的矛盾，再生成带来源和限制条件的摘要。",
+      "notes": [
+        "来源：评价报告第6.1、6.2节。",
+        "v1 E026（89–91秒）写“215km/h（或距离读数）”；已关联E026_REF001（observations.jsonl第127行）明确是“距离路口215米”。补证帧可见数字位于导航区域。",
+        "v8 E004（6–7秒）将说明截图中的NOA信息写为车辆界面观察；已关联E004_REF002（observations.jsonl第48行）已识别叠加字幕与截图。",
+        "v8人工7–11秒区间含混合内容，10秒已经出现破裂后视镜，不能据说明截图问题把E005车损描述也判为错误。",
+        "v8截图中的品牌和AEB工作范围等文字是源材料内容，本PPT仅用作来源分类案例，不对其产品事实作独立核实。"
+      ],
+      "source_references": [
+        {
+          "file": "D:/数据汇总/driving_defect_agent/reports/Agent工作效果对比评价_20260927-113112-432900-live.md",
+          "section": "6.1 导航距离识别结果没有同步修正最终摘要",
+          "lines": "173–177"
+        },
+        {
+          "file": "D:/数据汇总/driving_defect_agent/reports/Agent工作效果对比评价_20260927-113112-432900-live.md",
+          "section": "6.2 说明截图被提升为车辆原生界面观察",
+          "lines": "179–183"
+        }
+      ],
+      "long_text_warning": "v8为竖版说明图，正文不要照抄截图全文；只突出来源层级问题。"
+    },
+    {
+      "slide_number": 18,
+      "title": "改进方向：完善最终汇总，深化评价基准",
+      "lead": "当前定位：可追溯的线索筛查与研究辅助原型。",
+      "layout_hint": "四个优先方向卡片，底部一行研究边界；不是结束致谢页。",
+      "priorities": [
+        {
+          "title": "补证回写与摘要一致",
+          "text": "先消解矛盾，再完整表达核心命题"
+        },
+        {
+          "title": "事件聚合与素材边界",
+          "text": "补齐事故阶段，分清背景、口播与后续测试"
+        },
+        {
+          "title": "来源与确定性表达",
+          "text": "区分可见事实、来源声称和已验证机制"
+        },
+        {
+          "title": "场景汇总与评价深化",
+          "text": "汇总场景／身份，增加独立复核与重复实验"
+        }
+      ],
+      "supporting_facts": [
+        "172 条场景陈述、85 条车辆身份陈述已有内容",
+        "事件级 scene 与 vehicle_identity 尚未汇总落地",
+        "下一步：完整事件标注、独立复核、重复运行、对照实验"
+      ],
+      "footer": "单次运行与重点片段参考，不能证明全量召回、输出稳定性或相对方法提升。",
+      "notes": [
+        "来源：评价报告第5.3、6.3、7节。",
+        "当前事件scene全为空，vehicle_identity全为空对象；陈述层场景172条、车辆身份85条，主要缺口是事件级汇总。",
+        "优先方向来自本次已观察到的问题：v1 E026、v8 E004补证未回写；v1部分细阶段未覆盖；v4摘要不足；v10剪辑观察未关联；v8/v9跨素材关联；v10确定性措辞与限制不一致。",
+        "把可定位陈述及其来源等级、素材归属、不确定性汇总到事件后，可支持场景和车型分组研究；当前不做品牌可靠性排名。",
+        "本轮PPT是材料整理，不修改Agent，不重跑数据。独立复核、完整标注、重复运行与对照实验是后续研究安排。"
+      ],
+      "source_references": [
+        {
+          "file": "D:/数据汇总/driving_defect_agent/reports/Agent工作效果对比评价_20260927-113112-432900-live.md",
+          "section": "5.3 已有场景信息值得进一步汇总",
+          "lines": "167–169"
+        },
+        {
+          "file": "D:/数据汇总/driving_defect_agent/reports/Agent工作效果对比评价_20260927-113112-432900-live.md",
+          "section": "6.3 优先完善已有能力的最终呈现",
+          "lines": "185–196"
+        },
+        {
+          "file": "D:/数据汇总/driving_defect_agent/reports/Agent工作效果对比评价_20260927-113112-432900-live.md",
+          "section": "7 可用于论文的总结表述",
+          "lines": "198–200"
+        }
+      ],
+      "long_text_warning": "四张卡每张只放一条说明；具体例证和所有研究限制放备注。"
+    }
+  ]
+}
